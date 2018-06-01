@@ -10,3 +10,4 @@
  */
 
  
+$GLOBALS['TL_HOOKS']['compileArticle'][] = array('\Asc\Frontend\ZyppyClass', 'compileArticle');
