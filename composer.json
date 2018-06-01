@@ -1,0 +1,36 @@
+{
+    "name":"asconsulting/zyppy_class",
+    "description":"A module for the Contao CMS to allow for easy assigning of pre-assigned CSS classes",
+    "homepage": "https://andrewstevens.consulting",
+    "keywords":["contao", "skeleton"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
+        {
+            "name":"Andrew Stevens",
+            "homepage":"https://andrewstevens.consulting"
+        }
+    ],
+    "require":{
+        "php": "~5.4 || ~7.0",
+        "contao/core-bundle": "~4.4"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Asc\\": [
+                "system/modules/zyppy_class/library"
+            ]
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/zyppy_class": "system/modules/zyppy_class"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
