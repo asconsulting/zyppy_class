@@ -9,11 +9,9 @@
  * @link       https://andrewstevens.consulting
  */
 
-namespace Contao;
+namespace Contao\Module;
 
-use \Contao\Module as ContaoModule;
-
-abstract class Module extends ContaoModule
+abstract class ZyppyModule extends \Contao\Module
 {
 	/**
 	 * Initialize the object

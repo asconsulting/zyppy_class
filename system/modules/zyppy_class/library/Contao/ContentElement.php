@@ -9,12 +9,9 @@
  * @link       https://andrewstevens.consulting
  */
 
-namespace Contao;
+namespace Contao\ContentElement;
 
-use \Contao\ContentElement as ContaoContentElement;
-
-
-abstract class ContentElement extends ContaoContentElement
+abstract class ZyppyContentElement extends \Contao\ContentElement
 {
 
 	public function __construct($objElement, $strColumn='main')
