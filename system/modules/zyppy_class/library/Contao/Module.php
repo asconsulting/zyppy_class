@@ -9,7 +9,7 @@
  * @link       https://andrewstevens.consulting
  */
 
-namespace Asc;
+namespace Contao;
 
 use \Contao\Module as ContaoModule;
 
