@@ -14,7 +14,7 @@ namespace Asc\Backend;
 
 class ZyppyClass extends \Backend
 {
-	public function getCssOptions(DataContainer $dc) {
+	public function getCssOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		$strDefaultClasses = false;
 		$strClasses = false;
@@ -47,7 +47,7 @@ class ZyppyClass extends \Backend
 		return $arrOptions;
 	}
 	
-	public function getCommonClassOptions(DataContainer $dc) {
+	public function getCommonClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		if ($GLOBALS['TL_CONFIG']['commonClasses'] != '') {
 			foreach (explode(',', $GLOBALS['TL_CONFIG']['commonClasses']) as $key) {
