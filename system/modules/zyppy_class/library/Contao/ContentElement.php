@@ -11,26 +11,18 @@
 
 namespace Asc;
 
-use \Contao\Module;
+use \Contao\ContentElement as ContaoContentElement;
 
 
-abstract class ZyppyModule extends \Contao\Module
+abstract class ContentElement extends ContaoContentElement
 {
-	/**
-	 * Initialize the object
-	 * @param object
-	 * @param string
-	 */
-	public function __construct($objModule, $strColumn='main')
-	{
-		parent::__construct($objModule, $strColumn='main');
 
-		$arrCss = deserialize($objModule->cssID, true);
-		switch (get_class($objModule)) {
-			case 'Contao\ArticleModel':
-				$arrCss[1] .= ' zyppy_article ' .$this->cssChoser;
-			break;
-			
+	public function __construct($objElement, $strColumn='main')
+	{
+		parent::__construct($objElement, $strColumn='main');
+
+		$arrCss = deserialize($objElement->cssID, true);
+		switch (get_class($objElement)) {
 			default:
 				$arrCss[1] .= ' ' .$this->cssChoser;
 		 	break;
@@ -45,4 +37,5 @@ abstract class ZyppyModule extends \Contao\Module
 		
 		$this->cssID = $arrCss;
 	}
+
 }

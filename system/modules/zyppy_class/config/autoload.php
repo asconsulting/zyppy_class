@@ -15,6 +15,7 @@
  */
 ClassLoader::addClasses(array
 (
-	'Contao\Module'                    => 'system/modules/zyppy_class/library/Asc/Module/ZyppyModule.php',
-	'Contao\ContentElement'            => 'system/modules/zyppy_class/library/Asc/Element/ZyppyContentElement.php',
+	'Asc\Backend\ZyppyClass'           => 'system/modules/zyppy_class/library/Asc/Backend/ZyppyClass.php',
+	'Contao\Module'                    => 'system/modules/zyppy_class/library/Contao/Module.php',
+	'Contao\ContentElement'            => 'system/modules/zyppy_class/library/Contao/ContentElement.php',
 ));
