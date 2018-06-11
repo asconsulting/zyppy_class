@@ -19,9 +19,9 @@ class ZyppyPageModel extends \Contao\PageModel
 	public function __construct(Database\Result $objResult=null)
 	{
 		parent::__construct($objResult);
-/*		
+		
 		$arrCss = deserialize($this->cssID, true);
-		$arrCss[1] .= ' ' .$this->cssChoser;
+		$arrCss[1] .= ' ' .$this->cssChooser;
 
 		$arrCommon = deserialize($this->commonClasses);
 		if (!empty($arrCommon)) {
@@ -31,7 +31,7 @@ class ZyppyPageModel extends \Contao\PageModel
 		$arrCss[1] = trim($arrCss[1]);
 		
 		$this->cssID = $arrCss;
-		*/
+
 	}
 
 }

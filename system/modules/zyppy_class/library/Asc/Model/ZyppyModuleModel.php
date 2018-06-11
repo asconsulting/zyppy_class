@@ -21,7 +21,7 @@ class ZyppyModuleModel extends \Contao\ModuleModel
 		parent::__construct($objResult);
 		
 		$arrCss = deserialize($this->cssID, true);
-		$arrCss[1] .= ' ' .$this->cssChoser;
+		$arrCss[1] .= ' ' .$this->cssChooser;
 
 		$arrCommon = deserialize($this->commonClasses);
 		if (!empty($arrCommon)) {
