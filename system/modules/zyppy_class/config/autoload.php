@@ -17,6 +17,11 @@ ClassLoader::addClasses(array
 (
 	'Asc\Frontend\ZyppyClass' 					=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyClass.php',
 	'Asc\Backend\ZyppyClass' 					=> 'system/modules/zyppy_class/library/Asc/Backend/ZyppyClass.php',
-	'Contao\Module\ZyppyModule' 				=> 'system/modules/zyppy_class/library/Contao/Module.php',
-	'Contao\ContentElement\ZyppyContentElement' => 'system/modules/zyppy_class/library/Contao/ContentElement.php',
+	'Asc\Model\ZyppyContentModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyContentModel.php',
+	'Asc\Model\ZyppyArticleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyArticleModel.php',
+	'Asc\Model\ZyppyPageModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyPageModel.php',
+	'Asc\Model\ZyppyModuleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyModuleModel.php',
+	'Contao\Module' 							=> 'system/modules/zyppy_class/library/Contao/ZyppyModule.php',
+	'Contao\ContentElement' 					=> 'system/modules/zyppy_class/library/Contao/ZyppyContentElement.php',
+
 ));

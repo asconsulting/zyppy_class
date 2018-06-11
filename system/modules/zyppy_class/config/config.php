@@ -10,4 +10,7 @@
  */
 
  
-$GLOBALS['TL_HOOKS']['compileArticle'][] = array('\Asc\Frontend\ZyppyClass', 'compileArticle');
+$GLOBALS['TL_MODELS']['tl_page'] 	= 'Asc\Model\ZyppyPageModel';
+$GLOBALS['TL_MODELS']['tl_article'] = 'Asc\Model\ZyppyArticleModel';
+$GLOBALS['TL_MODELS']['tl_content'] = 'Asc\Model\ZyppyContentModel';
+$GLOBALS['TL_MODELS']['tl_module'] 	= 'Asc\Model\ZyppyModuleModel'; 
