@@ -11,6 +11,8 @@
 
 namespace Asc\Model;
 
+use Contao\Database;
+
 class ZyppyArticleModel extends \Contao\ArticleModel
 {
 

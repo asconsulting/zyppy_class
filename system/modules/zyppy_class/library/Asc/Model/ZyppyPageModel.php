@@ -11,6 +11,8 @@
 
 namespace Asc\Model;
 
+use Contao\Database;
+
 class ZyppyPageModel extends \Contao\PageModel
 {
 
