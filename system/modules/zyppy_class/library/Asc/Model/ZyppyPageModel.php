@@ -11,7 +11,7 @@
 
 namespace Asc\Model;
 
-abstract class ZyppyPageModel extends \Contao\PageModel
+class ZyppyPageModel extends \Contao\PageModel
 {
 
 	public function __construct(Database\Result $objResult=null)

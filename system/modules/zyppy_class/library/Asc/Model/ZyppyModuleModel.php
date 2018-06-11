@@ -11,7 +11,7 @@
 
 namespace Asc\Model;
 
-abstract class ZyppyModuleModel extends \Contao\ModuleModel
+class ZyppyModuleModel extends \Contao\ModuleModel
 {
 
 	public function __construct(Database\Result $objResult=null)

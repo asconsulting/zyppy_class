@@ -11,7 +11,7 @@
 
 namespace Asc\Model;
 
-abstract class ZyppyArticleModel extends \Contao\ArticleModel
+class ZyppyArticleModel extends \Contao\ArticleModel
 {
 
 	public function __construct(Database\Result $objResult=null)
