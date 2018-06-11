@@ -54,6 +54,20 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesDefault'] = array(
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_settings']['fields']['pageClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClasses'],
+	'inputType'               => 'text',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesDefault'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClassesDefault'],
+	'inputType'               => 'checkbox',
+	'eval'                    => array('tl_class'=>'w50 m12'),
+	'sql'                     => "char(1) NOT NULL default ''"
+);
+
 $GLOBALS['TL_DCA']['tl_settings']['fields']['commonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['commonClasses'],
 	'inputType'               => 'text',
