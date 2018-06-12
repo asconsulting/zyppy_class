@@ -15,5 +15,3 @@ $GLOBALS['TL_MODELS']['tl_form_field'] 	= 'Asc\Model\ZyppyFormFieldModel';
 $GLOBALS['TL_MODELS']['tl_form'] 		= 'Asc\Model\ZyppyFormModel';
 $GLOBALS['TL_MODELS']['tl_module'] 		= 'Asc\Model\ZyppyModuleModel'; 
 $GLOBALS['TL_MODELS']['tl_page'] 		= 'Asc\Model\ZyppyPageModel';
-
-//$GLOBALS['TL_HOOKS']['getFrontendModule'][] = array('Asc\Frontend\ZyppyModule', 'getFrontendModule');
