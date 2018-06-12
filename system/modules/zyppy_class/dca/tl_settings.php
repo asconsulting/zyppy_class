@@ -10,7 +10,7 @@
  */
 
  
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{css_chooser_legend},articleClasses,articleClassesDefault,contentClasses,contentClassesDefault,formFieldClasses,formFieldClassesDefault,formClasses,formClassesDefault,moduleClasses,moduleClassesDefault,pageClasses,pageClassesDefault,commonClasses;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{css_chooser_legend},articleClasses,articleClassesDefault,articleCommonClasses,contentClasses,contentClassesDefault,contentCommonClasses,formFieldClasses,formFieldClassesDefault,formFieldCommonClasses,formClasses,formClassesDefault,formCommonClasses,moduleClasses,moduleClassesDefault,moduleCommonClasses,pageClasses,pageClassesDefault,pageCommonClasses,commonClasses;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleClasses'],
