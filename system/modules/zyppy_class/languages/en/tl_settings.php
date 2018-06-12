@@ -18,6 +18,8 @@ $GLOBALS['TL_LANG']['tl_settings']['articleClassesDefault'] 	= array('Article Al
 $GLOBALS['TL_LANG']['tl_settings']['contentClasses'] 			= array('Content Classes', 'A comma seperated list of classes. Add a trailing comma to leave a blank option at the bottom of the chooser.');
 $GLOBALS['TL_LANG']['tl_settings']['contentClassesDefault'] 	= array('Content Allow Blank', 'Add a blank option to class selectors');
 $GLOBALS['TL_LANG']['tl_settings']['moduleClasses'] 			= array('Module Classes', 'A comma seperated list of classes. Add a trailing comma to leave a blank option at the bottom of the chooser.');
+$GLOBALS['TL_LANG']['tl_settings']['pageClassesDefault'] 		= array('Page Allow Blank', 'Add a blank option to class selectors');
+$GLOBALS['TL_LANG']['tl_settings']['pageClasses'] 				= array('Module Classes', 'A comma seperated list of classes. Add a trailing comma to leave a blank option at the bottom of the chooser.');
 $GLOBALS['TL_LANG']['tl_settings']['moduleClassesDefault'] 		= array('Module Allow Blank', 'Add a blank option to class selectors');
 $GLOBALS['TL_LANG']['tl_settings']['commonClasses'] 			= array('Common Classes', 'A comma seperated list of classes. Add a trailing comma to leave a blank option at the bottom of the chooser.');
 
