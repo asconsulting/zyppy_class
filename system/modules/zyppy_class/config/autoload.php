@@ -16,6 +16,8 @@
 ClassLoader::addClasses(array
 (
 	'Asc\Backend\ZyppyClass' 					=> 'system/modules/zyppy_class/library/Asc/Backend/ZyppyClass.php',
+	'Asc\Frontend\ZyppyModule' 					=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyModule.php',
+
 	'Asc\Model\ZyppyArticleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyArticleModel.php',
 	'Asc\Model\ZyppyContentModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyContentModel.php',
 	'Asc\Model\ZyppyFormFieldModel' 			=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyFormFieldModel.php',
