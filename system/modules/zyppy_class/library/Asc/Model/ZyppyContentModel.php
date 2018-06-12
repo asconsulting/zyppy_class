@@ -27,7 +27,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objModule = ModuleModel::findByPk($this->module);
 			if ($objModule) {
 				$arrModuleCss = \StringUtil::deserialize($objModule->cssID, true);
-				$arrModuleCss[1] .= ' zyppy_module ' .$objModule->cssChooser;
+				$arrModuleCss[1] .= ' ' .$objModule->cssChooser;
 
 				$arrCommon = \StringUtil::deserialize($objModule->commonClasses, true);
 				if (!empty($arrCommon)) {
@@ -42,7 +42,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objForm = FormModel::findByPk($this->form);
 			if ($objForm) {
 				$arrFormCss = \StringUtil::deserialize($objForm->cssID, true);
-				$arrFormCss[1] .= ' zyppy_module ' .$objForm->cssChooser;
+				$arrFormCss[1] .= ' ' .$objForm->cssChooser;
 
 				$arrCommon = \StringUtil::deserialize($objForm->commonClasses, true);
 				if (!empty($arrCommon)) {
@@ -53,7 +53,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			}
 		}
 		
-		$arrCss[1] .= ' zyppy zyppy_content ' .$this->cssChooser;
+		$arrCss[1] .= ' ' .$this->cssChooser;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {

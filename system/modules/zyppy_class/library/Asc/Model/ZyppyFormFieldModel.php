@@ -21,7 +21,7 @@ class ZyppyFormFieldModel extends \Contao\FormFieldModel
 		parent::__construct($objResult);
 		
 		$strCss = $this->class;
-		$strCss .= ' zyppy zyppy_field ' .$this->cssChooser;
+		$strCss .= ' ' .$this->cssChooser;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {
