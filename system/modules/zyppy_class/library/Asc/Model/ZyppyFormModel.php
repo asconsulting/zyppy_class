@@ -20,7 +20,7 @@ class ZyppyFormModel extends \Contao\FormModel
 	{
 		parent::__construct($objResult);
 
-		var_dump($$this->attributes);
+		var_dump($this->attributes);
 		
 		$arrCss = \StringUtil::deserialize($this->attributes, true);
 		//$arrCss[1] .= ' zyppy zyppy_form ' .$this->cssChooser;
