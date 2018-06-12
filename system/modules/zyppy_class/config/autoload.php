@@ -22,4 +22,5 @@ ClassLoader::addClasses(array
 	'Asc\Model\ZyppyFormModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyFormModel.php',
 	'Asc\Model\ZyppyModuleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyModuleModel.php',
 	'Asc\Model\ZyppyPageModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyPageModel.php'
+	'Asc\Frontend\ZyppyForm' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyForm.php',
 ));
