@@ -27,9 +27,16 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objModule = ModuleModel::findByPk($this->module);
 			if ($objModule) {
 				$arrModuleCss = \StringUtil::deserialize($objModule->cssID, true);
-				$arrModuleCss[1] .= ' ' .$objModule->cssChooser;
+				$arrModuleCss[1] .= ' ' .$objModule->primaryClass;
 
 				$arrCommon = \StringUtil::deserialize($objModule->commonClasses, true);
+				if (!empty($arrCommon)) {
+					$arrModuleCss[1] .= ' ' .implode(' ', $arrCommon);
+				}
+				$arrModuleCss[1] = str_replace('  ', ' ', $arrModuleCss[1]);
+				$arrModuleCss[1] .= trim($arrModuleCss[1]);
+				
+				$arrCommon = \StringUtil::deserialize($objModule->globalCommonClasses, true);
 				if (!empty($arrCommon)) {
 					$arrModuleCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
@@ -42,9 +49,16 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objForm = FormModel::findByPk($this->form);
 			if ($objForm) {
 				$arrFormCss = \StringUtil::deserialize($objForm->cssID, true);
-				$arrFormCss[1] .= ' ' .$objForm->cssChooser;
+				$arrFormCss[1] .= ' ' .$objForm->primaryClass;
 
 				$arrCommon = \StringUtil::deserialize($objForm->commonClasses, true);
+				if (!empty($arrCommon)) {
+					$arrFormCss[1] .= ' ' .implode(' ', $arrCommon);
+				}
+				$arrFormCss[1] = str_replace('  ', ' ', $arrFormCss[1]);
+				$arrFormCss[1] .= trim($arrFormCss[1]);
+				
+				$arrCommon = \StringUtil::deserialize($objForm->globalCommonClasses, true);
 				if (!empty($arrCommon)) {
 					$arrFormCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
@@ -53,9 +67,16 @@ class ZyppyContentModel extends \Contao\ContentModel
 			}
 		}
 		
-		$arrCss[1] .= ' ' .$this->cssChooser;
+		$arrCss[1] .= ' ' .$this->primaryClass;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
+		if (!empty($arrCommon)) {
+			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+		}
+		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+		$arrCss[1] = trim($arrCss[1]);
+		
+		$arrCommon = \StringUtil::deserialize($this->globalCommonClasses, true);
 		if (!empty($arrCommon)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
 		}

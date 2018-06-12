@@ -11,19 +11,19 @@
 
  
 foreach ($GLOBALS['TL_DCA']['tl_module']['palettes'] as $key => $value) {
-	$GLOBALS['TL_DCA']['tl_module']['palettes'][$key] = str_replace(';{expert_legend', ';{css_chooser_legend},cssPrimaryClass,cssCommonClasses,globalCommonClasses;{expert_legend', $value);	
+	$GLOBALS['TL_DCA']['tl_module']['palettes'][$key] = str_replace(';{expert_legend', ';{css_chooser_legend},primaryClass,commonClasses,globalCommonClasses;{expert_legend', $value);	
 }
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['cssPrimaryClass'] = array(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['cssPrimaryClass'],
+$GLOBALS['TL_DCA']['tl_module']['fields']['primaryClass'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['primaryClass'],
 	'inputType'               => 'select',
-	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getPrimaryCssOptions'),
+	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getPrimaryClassOptions'),
 	'load_callback'			  => array('\Asc\Backend\ZyppyClass', 'loadPrimaryClassField'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['cssCommonClasses'] = array(
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['cssCommonClasses'],
+$GLOBALS['TL_DCA']['tl_module']['fields']['commonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['commonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getCommonClassOptions'),
 	'load_callback'			  => array('\Asc\Backend\ZyppyClass', 'loadCommonClassField'),
