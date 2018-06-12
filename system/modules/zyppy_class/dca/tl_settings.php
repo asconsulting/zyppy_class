@@ -28,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesDefault'] = array(
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'listWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
