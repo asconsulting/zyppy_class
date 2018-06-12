@@ -46,8 +46,8 @@ class ZyppyClass extends \Backend
 			break;
 			
 			case "tl_page":
-				$strDefaultClasses = 'moduleClassesDefault';
-				$strClasses = 'moduleClasses';
+				$strDefaultClasses = 'pageClassesDefault';
+				$strClasses = 'pageClasses';
 			break;
 		}
 		
