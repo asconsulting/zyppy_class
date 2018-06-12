@@ -13,7 +13,7 @@ namespace Asc\Model;
 
 use Contao\Database;
 
-class ZyppyPageModel extends \Contao\PageModel
+class ZyppyFormFieldModel extends \Contao\FormFieldModel
 {
 
 	public function __construct(Database\Result $objResult=null)

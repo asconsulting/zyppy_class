@@ -30,7 +30,22 @@ class ZyppyClass extends \Backend
 				$strClasses = 'contentClasses';
 			break;
 			
+			case "tl_form_field":
+				$strDefaultClasses = 'formFieldClassesDefault';
+				$strClasses = 'formFieldClassesClasses';
+			break;
+			
+			case "tl_form":
+				$strDefaultClasses = 'formClassesDefault';
+				$strClasses = 'formClasses';
+			break;
+			
 			case "tl_module":
+				$strDefaultClasses = 'moduleClassesDefault';
+				$strClasses = 'moduleClasses';
+			break;
+			
+			case "tl_page":
 				$strDefaultClasses = 'moduleClassesDefault';
 				$strClasses = 'moduleClasses';
 			break;
