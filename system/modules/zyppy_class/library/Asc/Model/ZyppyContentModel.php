@@ -34,6 +34,10 @@ class ZyppyContentModel extends \Contao\ContentModel
 				$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 				$arrCss[1] = trim($arrCss[1]);
 			}
+			var_dump($this);
+			echo "<br><hr><br><br>";
+			var_dump($objModule);
+			echo "<br><hr><br><br>";
 		}
 		
 		$arrCss = \StringUtil::deserialize($this->cssID, true);
