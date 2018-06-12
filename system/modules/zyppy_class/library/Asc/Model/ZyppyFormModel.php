@@ -19,11 +19,12 @@ class ZyppyFormModel extends \Contao\FormModel
 	public function __construct(Database\Result $objResult=null)
 	{
 		parent::__construct($objResult);
-				
-		$arrCss = \StringUtil::deserialize($this->cssID, true);
+
+		var_dump($$this->attributes);
+		
+		$arrCss = \StringUtil::deserialize($this->attributes, true);
 		//$arrCss[1] .= ' zyppy zyppy_form ' .$this->cssChooser;
 
-		var_dump($arrCss);
 		exit();
 		
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
@@ -33,7 +34,7 @@ class ZyppyFormModel extends \Contao\FormModel
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
 		
-		$this->cssID = $arrCss;
+		$this->attributes = $arrCss;
 	}
 
 }
