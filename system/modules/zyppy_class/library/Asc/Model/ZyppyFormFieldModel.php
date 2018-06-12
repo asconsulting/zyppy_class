@@ -20,17 +20,17 @@ class ZyppyFormFieldModel extends \Contao\FormFieldModel
 	{
 		parent::__construct($objResult);
 		
-		$arrCss = \StringUtil::deserialize($this->cssID, true);
-		$arrCss[1] .= ' zyppy zyppy_field ' .$this->cssChooser;
+		$strCss = $this->class;
+		$strCss .= ' zyppy zyppy_field ' .$this->cssChooser;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {
-			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+			$strCss .= ' ' .implode(' ', $arrCommon);
 		}
-		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
-		$arrCss[1] = trim($arrCss[1]);
+		$strCss = str_replace('  ', ' ', $strCss);
+		$strCss = trim($strCss);
 		
-		$this->cssID = $arrCss;
+		$this->class = $strCss;
 	}
 
 }
