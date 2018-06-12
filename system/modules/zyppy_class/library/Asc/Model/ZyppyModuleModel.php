@@ -19,11 +19,7 @@ class ZyppyModuleModel extends \Contao\ModuleModel
 	public function __construct(Database\Result $objResult=null)
 	{
 		parent::__construct($objResult);
-		
-		var_dump($this);
-		
-		exit();
-		
+
 		$arrCss = \StringUtil::deserialize($this->cssID, true);
 		$arrCss[1] .= ' zyppy zyppy_module ' .$this->cssChooser;
 
