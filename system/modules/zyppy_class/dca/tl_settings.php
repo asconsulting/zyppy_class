@@ -26,6 +26,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesDefault'] = array(
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
+);
+
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentClasses'],
 	'inputType'               => 'text',
@@ -38,6 +45,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClassesDefault'] = array(
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClasses'] = array(
@@ -54,6 +68,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClassesDefault'] = array(
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
+);
+
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formClasses'],
 	'inputType'               => 'text',
@@ -66,6 +87,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formClassesDefault'] = array(
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClasses'] = array(
@@ -82,6 +110,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesDefault'] = array(
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
+$GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
+);
+
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClasses'],
 	'inputType'               => 'text',
@@ -94,6 +129,13 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesDefault'] = array(
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
+);
+
+$GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonClasses'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageCommonClasses'],
+	'inputType'               => 'optionWizard',
+	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr long'),
+	'sql'                     => "meduimtext NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['commonClasses'] = array(
