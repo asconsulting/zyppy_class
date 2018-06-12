@@ -20,6 +20,9 @@ class ZyppyContentModel extends \Contao\ContentModel
 	{
 		parent::__construct($objResult);
 		
+		var_dump($this);
+		echo "<br><hr><br><br>";
+		
 		$arrCss = \StringUtil::deserialize($this->cssID, true);
 		$arrCss[1] .= ' zyppy zyppy_content ' .$this->cssChooser;
 
