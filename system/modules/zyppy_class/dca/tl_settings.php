@@ -18,7 +18,7 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -47,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -59,7 +59,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -76,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -88,7 +88,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -117,7 +117,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -134,7 +134,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -146,7 +146,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -175,7 +175,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesRequired'] = array(
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
@@ -192,7 +192,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonRequired'] = array(
  */
 $GLOBALS['TL_DCA']['tl_settings']['fields']['globalCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['globalCommonClasses'],
-	'inputType'               => 'optionWizard',
+	'inputType'               => 'keyValueWizard',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'clr w50'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
