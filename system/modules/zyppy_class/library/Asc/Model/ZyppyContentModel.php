@@ -12,6 +12,7 @@
 namespace Asc\Model;
 
 use Contao\Database;
+use Contao\ModuleModel;
 
 class ZyppyContentModel extends \Contao\ContentModel
 {
@@ -20,8 +21,20 @@ class ZyppyContentModel extends \Contao\ContentModel
 	{
 		parent::__construct($objResult);
 		
-		var_dump($this);
-		echo "<br><hr><br><br>";
+		if ($this->type == 'module') {
+			$objModule = ModuleModel::findByPk($this->module);
+			if ($objModule) {
+				$arrCss = \StringUtil::deserialize($objModule->cssID, true);
+				$arrCss[1] .= ' zyppy_module ' .$objModule->cssChooser;
+
+				$arrCommon = \StringUtil::deserialize($objModule->commonClasses, true);
+				if (!empty($arrCommon)) {
+					$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+				}
+				$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+				$arrCss[1] = trim($arrCss[1]);
+			}
+		}
 		
 		$arrCss = \StringUtil::deserialize($this->cssID, true);
 		$arrCss[1] .= ' zyppy zyppy_content ' .$this->cssChooser;
