@@ -32,7 +32,7 @@ class ZyppyClass extends \Backend
 			
 			case "tl_form_field":
 				$strDefaultClasses = 'formFieldClassesDefault';
-				$strClasses = 'formFieldClassesClasses';
+				$strClasses = 'formFieldClasses';
 			break;
 			
 			case "tl_form":
