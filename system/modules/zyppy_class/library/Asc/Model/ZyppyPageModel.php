@@ -20,10 +20,10 @@ class ZyppyPageModel extends \Contao\PageModel
 	{
 		parent::__construct($objResult);
 		
-		$arrCss = deserialize($this->cssID, true);
-		$arrCss[1] .= ' ' .$this->cssChooser;
+		$arrCss = \StringUtil::deserialize($this->cssID, true);
+		$arrCss[1] .= ' zyppy ' .$this->cssChooser;
 
-		$arrCommon = deserialize($this->commonClasses);
+		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
 		}
