@@ -14,61 +14,219 @@ namespace Asc\Backend;
 
 class ZyppyClass extends \Backend
 {
-	public function getCssOptions(\Contao\DataContainer $dc) {
+	public function getPrimaryClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
-		$strDefaultClasses = false;
+		$strClassRequired = false;
 		$strClasses = false;
 		
 		switch($dc->table) {
 			case "tl_article":
-				$strDefaultClasses = 'articleClassesDefault';
+				$strClassRequired = 'articleClassesRequired';
 				$strClasses = 'articleClasses';
 			break;
 			
 			case "tl_content":
-				$strDefaultClasses = 'contentClassesDefault';
+				$strClassRequired = 'contentClassesRequired';
 				$strClasses = 'contentClasses';
 			break;
 			
 			case "tl_form_field":
-				$strDefaultClasses = 'formFieldClassesDefault';
+				$strClassRequired = 'formFieldClassesRequired';
 				$strClasses = 'formFieldClasses';
 			break;
 			
 			case "tl_form":
-				$strDefaultClasses = 'formClassesDefault';
+				$strClassRequired = 'formClassesRequired';
 				$strClasses = 'formClasses';
 			break;
 			
 			case "tl_module":
-				$strDefaultClasses = 'moduleClassesDefault';
+				$strClassRequired = 'moduleClassesRequired';
 				$strClasses = 'moduleClasses';
 			break;
 			
 			case "tl_page":
-				$strDefaultClasses = 'pageClassesDefault';
+				$strClassRequired = 'pageClassesRequired';
 				$strClasses = 'pageClasses';
 			break;
 		}
 		
-		if ($GLOBALS['TL_CONFIG'][$strDefaultClasses]) {
+		$arrOptions = array();
+		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
 			$arrOptions[''] = '-';
 		}
+
 		if ($GLOBALS['TL_CONFIG'][$strClasses] != '') {
-			foreach (explode(',', $GLOBALS['TL_CONFIG'][$strClasses]) as $key) {
-				$arrOptions[$key] = $key;
-			}
+			$arrOptions = array_merge(\StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strClasses], true), $arrOptions);
 		}
 		return $arrOptions;
 	}
 	
 	public function getCommonClassOptions(\Contao\DataContainer $dc) {
+		$strCommonClasses = false;
+		
+		switch($dc->table) {
+			case "tl_article":
+				$strCommonClasses = 'articleCommonClasses';
+			break;
+			
+			case "tl_content":
+				$strCommonClasses = 'contentCommonClasses';
+			break;
+			
+			case "tl_form_field":
+				$strCommonClasses = 'formFieldCommonClasses';
+			break;
+			
+			case "tl_form":
+				$strCommonClasses = 'formCommonClasses';
+			break;
+			
+			case "tl_module":
+				$strCommonClasses = 'moduleCommonClasses';
+			break;
+			
+			case "tl_page":
+				$strCommonClasses = 'pageCommonClasses';
+			break;
+		}
+
 		$arrOptions = array();
-		if ($GLOBALS['TL_CONFIG']['commonClasses'] != '') {
-			foreach (explode(',', $GLOBALS['TL_CONFIG']['commonClasses']) as $key) {
-				$arrOptions[$key] = $key;
-			}
+		if ($GLOBALS['TL_CONFIG'][$strCommonClasses] != '') {
+			$arrOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
 		}
 		return $arrOptions;
 	}
+	
+	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
+		$arrOptions = array();
+		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
+			$arrOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
+		}
+		return $arrOptions;
+	}
+	
+	public function loadPrimaryClassField($varValue, \Contao\DataContainer $dc)
+	{
+		switch($dc->table) {
+			case "tl_article":
+				$strClassField 		= 'articleClasses';
+				$strClassRequired 	= 'articleClassesRequired';
+			break;
+			
+			case "tl_content":
+				$strClassField 		= 'contentClasses';
+				$strClassRequired 	= 'contentClassesRequired';
+			break;
+			
+			case "tl_form_field":
+				$strClassField 		= 'formFieldClasses';
+				$strClassRequired 	= 'formFieldClassesRequired';
+			break;
+			
+			case "tl_form":
+				$strClassField 		= 'formClasses';
+				$strClassRequired 	= 'formClassesRequired';
+			break;
+			
+			case "tl_module":
+				$strClassField 		= 'moduleClasses';
+				$strClassRequired 	= 'moduleClassesRequired';
+			break;
+			
+			case "tl_page":
+				$strClassField 		= 'pageClasses';
+				$strClassRequired 	= 'pageClassesRequired';
+			break;
+		}
+		
+		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
+			
+		}
+		var_dump($dc);
+		exit();
+	}
+	
+	public function loadCommonClassField($varValue, \Contao\DataContainer $dc)
+	{
+		switch($dc->table) {
+			case "tl_article":
+				$strClassField 		= 'articleClasses';
+				$strClassRequired 	= 'articleClassesRequired';
+			break;
+			
+			case "tl_content":
+				$strClassField 		= 'contentClasses';
+				$strClassRequired 	= 'contentClassesRequired';
+			break;
+			
+			case "tl_form_field":
+				$strClassField 		= 'formFieldClasses';
+				$strClassRequired 	= 'formFieldClassesRequired';
+			break;
+			
+			case "tl_form":
+				$strClassField 		= 'formClasses';
+				$strClassRequired 	= 'formClassesRequired';
+			break;
+			
+			case "tl_module":
+				$strClassField 		= 'moduleClasses';
+				$strClassRequired 	= 'moduleClassesRequired';
+			break;
+			
+			case "tl_page":
+				$strClassField 		= 'pageClasses';
+				$strClassRequired 	= 'pageClassesRequired';
+			break;
+		}
+		var_dump($dc);
+		exit();
+	}
+	
+	public function loadGlobalCommonClassField($varValue, \Contao\DataContainer $dc)
+	{
+		switch($dc->table) {
+			case "tl_article":
+				$strClassField 		= 'articleClasses';
+				$strClassRequired 	= 'articleClassesRequired';
+			break;
+			
+			case "tl_content":
+				$strClassField 		= 'contentClasses';
+				$strClassRequired 	= 'contentClassesRequired';
+			break;
+			
+			case "tl_form_field":
+				$strClassField 		= 'formFieldClasses';
+				$strClassRequired 	= 'formFieldClassesRequired';
+			break;
+			
+			case "tl_form":
+				$strClassField 		= 'formClasses';
+				$strClassRequired 	= 'formClassesRequired';
+			break;
+			
+			case "tl_module":
+				$strClassField 		= 'moduleClasses';
+				$strClassRequired 	= 'moduleClassesRequired';
+			break;
+			
+			case "tl_page":
+				$strClassField 		= 'pageClasses';
+				$strClassRequired 	= 'pageClassesRequired';
+			break;
+		}
+		
+		
+		
+		var_dump($dc);
+		exit();
+	}
+	
+	public function loadDca(\Contao\DataContainer $dc) {
+		var_dump($dc);
+		exit();
+	}
+	
 }

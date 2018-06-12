@@ -21,9 +21,16 @@ class ZyppyPageModel extends \Contao\PageModel
 		parent::__construct($objResult);
 		
 		$strCss = $this->cssClass;
-		$strCss .= ' ' .$this->cssChooser;
+		$strCss .= ' ' .$this->primaryClass;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
+		if (!empty($arrCommon)) {
+			$strCss .= ' ' .implode(' ', $arrCommon);
+		}
+		$strCss = str_replace('  ', ' ', $strCss);
+		$strCss = trim($strCss);
+	
+		$arrCommon = \StringUtil::deserialize($this->globalCommonClasses, true);
 		if (!empty($arrCommon)) {
 			$strCss .= ' ' .implode(' ', $arrCommon);
 		}
