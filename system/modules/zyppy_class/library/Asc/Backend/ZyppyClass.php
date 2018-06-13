@@ -101,6 +101,8 @@ class ZyppyClass extends \Backend
 	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		
+		echo "getGlobalCommonClassOptions()<br>";
+		echo "<br>";
 		var_dump($dc->table);
 		exit();
 		
@@ -147,6 +149,9 @@ class ZyppyClass extends \Backend
 		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
 			
 		}
+		
+		echo "loadPrimaryClassField()<br>";
+		echo "<br>";
 		var_dump($dc);
 		exit();
 	}
@@ -184,7 +189,10 @@ class ZyppyClass extends \Backend
 				$strClassRequired 	= 'pageClassesRequired';
 			break;
 		}
-		var_dump($dc);
+		
+		echo "loadCommonClassField()<br>";
+		echo "<br>";
+		var_dump($dc->table);
 		exit();
 	}
 	
@@ -223,13 +231,16 @@ class ZyppyClass extends \Backend
 		}
 		
 		
-		
-		var_dump($dc);
+		echo "loadGlobalCommonClassField()<br>";
+		echo "<br>";
+		var_dump($dc->table);
 		exit();
 	}
 	
 	public function loadDca(\Contao\DataContainer $dc) {
-		var_dump($dc);
+		echo "Load DCA<br>";
+		echo "<br>";
+		var_dump($dc->table);
 		exit();
 	}
 	
