@@ -14,7 +14,7 @@ $GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('\Asc\Backe
 $GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('\Asc\Backend\ZyppyClass', 'hideUnconfigured');
 
 foreach ($GLOBALS['TL_DCA']['tl_page']['palettes'] as $key => $value) {
-	$GLOBALS['TL_DCA']['tl_page']['palettes'][$key] = str_replace(';{expert_legend', ';{class_legend},commonClasses,globalCommonClasse,exclusiveClass;{expert_legend', $value);	
+	$GLOBALS['TL_DCA']['tl_page']['palettes'][$key] = str_replace(';{expert_legend', ';{class_legend},commonClasses,globalCommonClasses,exclusiveClass;{expert_legend', $value);	
 }
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['exclusiveClass'] = array(
