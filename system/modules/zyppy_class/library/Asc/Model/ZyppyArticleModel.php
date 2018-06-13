@@ -37,6 +37,15 @@ class ZyppyArticleModel extends \Contao\ArticleModel
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
 		
+		$arrTemp = explode(' ', $arrCss[1]);
+		$arrClass = array();
+		foreach ($arrTemp as $strClass) {
+			if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
+				$arrClass[] = trim($strClass);
+			}
+		}
+		$arrCss[1] = implode(' ', $arrClass);
+		
 		$this->cssID = $arrCss;
 	}
 

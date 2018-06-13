@@ -37,6 +37,15 @@ class ZyppyPageModel extends \Contao\PageModel
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
 		
+		$arrTemp = explode(' ', $strCss);
+		$arrClass = array();
+		foreach ($arrTemp as $strClass) {
+			if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
+				$arrClass[] = trim($strClass);
+			}
+		}
+		$strCss = implode(' ', $arrClass);
+		
 		$this->cssClass = $strCss;
 	}
 
