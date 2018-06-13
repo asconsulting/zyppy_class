@@ -27,7 +27,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objModule = ModuleModel::findByPk($this->module);
 			if ($objModule) {
 				$arrModuleCss = \StringUtil::deserialize($objModule->cssID, true);
-				$arrModuleCss[1] .= ' ' .$objModule->primaryClass;
+				$arrModuleCss[1] .= ' ' .$objModule->exclusiveClass;
 
 				$arrCommon = \StringUtil::deserialize($objModule->commonClasses, true);
 				if (!empty($arrCommon)) {
@@ -49,7 +49,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			$objForm = FormModel::findByPk($this->form);
 			if ($objForm) {
 				$arrFormCss = \StringUtil::deserialize($objForm->cssID, true);
-				$arrFormCss[1] .= ' ' .$objForm->primaryClass;
+				$arrFormCss[1] .= ' ' .$objForm->exclusiveClass;
 
 				$arrCommon = \StringUtil::deserialize($objForm->commonClasses, true);
 				if (!empty($arrCommon)) {
@@ -67,7 +67,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 			}
 		}
 		
-		$arrCss[1] .= ' ' .$this->primaryClass;
+		$arrCss[1] .= ' ' .$this->exclusiveClass;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {

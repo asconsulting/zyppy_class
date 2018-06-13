@@ -14,7 +14,7 @@ namespace Asc\Backend;
 
 class ZyppyClass extends \Backend
 {
-	public function getPrimaryClassOptions(\Contao\DataContainer $dc) {
+	public function getExclusiveClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		$strClassRequired = false;
 		$strClasses = false;
@@ -152,7 +152,7 @@ class ZyppyClass extends \Backend
 		}
 		
 		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
-			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['eval']['mandatory'] = true;
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['exclusiveClass']['eval']['mandatory'] = true;
 		}
 		
 		if ($GLOBALS['TL_CONFIG'][$strCommonRequired]) {
@@ -168,42 +168,42 @@ class ZyppyClass extends \Backend
 	{
 		switch($dc->table) {
 			case "tl_article":
-				$strPrimaryClasses = 'articleClasses';
+				$strExclusiveClasses = 'articleClasses';
 				$strCommonClasses = 'articleCommonClasses';
 			break;
 			
 			case "tl_content":
-				$strPrimaryClasses = 'contentClasses';
+				$strExclusiveClasses = 'contentClasses';
 				$strCommonClasses = 'contentCommonClasses';
 			break;
 			
 			case "tl_form_field":
-				$strPrimaryClasses = 'formFieldClasses';
+				$strExclusiveClasses = 'formFieldClasses';
 				$strCommonClasses = 'formFieldCommonClasses';
 			break;
 			
 			case "tl_form":
-				$strPrimaryClasses = 'formClasses';
+				$strExclusiveClasses = 'formClasses';
 				$strCommonClasses = 'formCommonClasses';
 			break;
 			
 			case "tl_module":
-				$strPrimaryClasses = 'moduleClasses';
+				$strExclusiveClasses = 'moduleClasses';
 				$strCommonClasses = 'moduleCommonClasses';
 			break;
 			
 			case "tl_page":
-				$strPrimaryClasses = 'pageClasses';
+				$strExclusiveClasses = 'pageClasses';
 				$strCommonClasses = 'pageCommonClasses';
 			break;
 		}
 		
-		$arrPrimaryClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strPrimaryClasses], true);
+		$arrExclusiveClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strExclusiveClasses], true);
 		$arrCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
 		$arrGlobalCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
 		
-		if (!$arrPrimaryClassOptions) {
-			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['inputType'] = false;
+		if (!$arrExclusiveClassOptions) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['exclusiveClass']['inputType'] = false;
 		}
 				
 		if (!$arrCommonClassOptions) {

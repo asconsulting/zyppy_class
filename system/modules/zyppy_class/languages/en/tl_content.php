@@ -13,7 +13,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['primaryClass'] 			= array('CSS Class', 'Select which class to apply to this content element.');
+$GLOBALS['TL_LANG']['tl_content']['exclusiveClass'] 		= array('Exclusive Class', 'Select which class to apply to this content element.');
 $GLOBALS['TL_LANG']['tl_content']['commonClasses'] 			= array('Common Classes', 'Select classes that apply to this content element.');
 $GLOBALS['TL_LANG']['tl_content']['globalCommonClasses'] 	= array('Global Common Classes', 'Select classes that apply to this content element.');
 

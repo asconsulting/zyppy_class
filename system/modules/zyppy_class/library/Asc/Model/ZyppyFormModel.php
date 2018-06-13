@@ -21,7 +21,7 @@ class ZyppyFormModel extends \Contao\FormModel
 		parent::__construct($objResult);
 		
 		$strCss = $this->cssClass;
-		$strCss .= ' ' .$this->primaryClass;
+		$strCss .= ' ' .$this->exclusiveClass;
 
 		$arrCommon = \StringUtil::deserialize($this->commonClasses, true);
 		if (!empty($arrCommon)) {

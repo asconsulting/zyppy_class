@@ -13,7 +13,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_form']['primaryClass'] 			= array('CSS Class', 'Select which class to apply to this form.');
+$GLOBALS['TL_LANG']['tl_form']['exclusiveClass'] 			= array('Exclusive Class', 'Select which class to apply to this form.');
 $GLOBALS['TL_LANG']['tl_form']['commonClasses'] 		= array('Common Classes', 'Select classes that apply to this form.');
 $GLOBALS['TL_LANG']['tl_form']['globalCommonClasses'] 	= array('Global Common Classes', 'Select classes that apply to this form.');
 
