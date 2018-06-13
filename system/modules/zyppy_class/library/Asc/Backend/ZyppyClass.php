@@ -101,7 +101,7 @@ class ZyppyClass extends \Backend
 	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		
-		var_dump($dc);
+		var_dump($dc->table);
 		exit();
 		
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
