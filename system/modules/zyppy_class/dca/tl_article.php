@@ -21,14 +21,16 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['primaryClass'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_article']['primaryClass'],
 	'inputType'               => 'select',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getPrimaryClassOptions'),
+	'eval'					  => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
+	
 );
 
 $GLOBALS['TL_DCA']['tl_article']['fields']['commonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_article']['commonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getCommonClassOptions'),
-	'eval'                    => array('multiple'=>true),
+	'eval'                    => array('multiple'=>true, 'tl_class'=>'w50 wizard50'),
 	'sql'                     => "blob NULL"
 );
 
@@ -36,6 +38,6 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['globalCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_article']['globalCommonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getGlobalCommonClassOptions'),
-	'eval'                    => array('multiple'=>true),
+	'eval'                    => array('multiple'=>true, 'tl_class'=>'w50 wizard50'),
 	'sql'                     => "blob NULL"
 );

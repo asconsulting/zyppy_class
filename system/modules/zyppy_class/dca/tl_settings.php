@@ -199,6 +199,6 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['globalCommonClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['globalCommonRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['globalCommonRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
