@@ -10,15 +10,17 @@
  */
 
  
+$GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('\Asc\Backend\ZyppyClass', 'setupRequiredFields');
+ 
 foreach ($GLOBALS['TL_DCA']['tl_page']['palettes'] as $key => $value) {
 	$GLOBALS['TL_DCA']['tl_page']['palettes'][$key] = str_replace(';{expert_legend', ';{class_legend},primaryClass,commonClasses,globalCommonClasses;{expert_legend', $value);	
 }
+
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['primaryClass'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['primaryClass'],
 	'inputType'               => 'select',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getPrimaryClassOptions'),
-	'load_callback'			  => array(array('\Asc\Backend\ZyppyClass', 'loadPrimaryClassField')),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );
 

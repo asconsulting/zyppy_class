@@ -116,6 +116,50 @@ class ZyppyClass extends \Backend
 		return $arrOptions;
 	}
 	
+	public function setupRequiredFields(\Contao\DataContainer $dc)
+	{
+		switch($dc->table) {
+			case "tl_article":
+				$strClassField 		= 'articleClasses';
+				$strClassRequired 	= 'articleClassesRequired';
+			break;
+			
+			case "tl_content":
+				$strClassField 		= 'contentClasses';
+				$strClassRequired 	= 'contentClassesRequired';
+			break;
+			
+			case "tl_form_field":
+				$strClassField 		= 'formFieldClasses';
+				$strClassRequired 	= 'formFieldClassesRequired';
+			break;
+			
+			case "tl_form":
+				$strClassField 		= 'formClasses';
+				$strClassRequired 	= 'formClassesRequired';
+			break;
+			
+			case "tl_module":
+				$strClassField 		= 'moduleClasses';
+				$strClassRequired 	= 'moduleClassesRequired';
+			break;
+			
+			case "tl_page":
+				$strClassField 		= 'pageClasses';
+				$strClassRequired 	= 'pageClassesRequired';
+			break;
+		}
+		
+		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields'][$strClassField]['eval']['mandatory'] = true;
+		}
+		
+		//echo "loadPrimaryClassField()<br>";
+		//echo "<br>";
+		//var_dump($dc->table);
+		//exit();
+	}
+	
 	public function loadPrimaryClassField($varValue, \Contao\DataContainer $dc)
 	{
 		switch($dc->table) {
