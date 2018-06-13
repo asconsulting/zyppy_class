@@ -15,7 +15,7 @@
  */
 $GLOBALS['TL_LANG']['tl_module']['primaryClass'] 			= array('CSS Class', 'Select which class to apply to this module.');
 $GLOBALS['TL_LANG']['tl_module']['commonClasses'] 			= array('Common Classes', 'Select classes that apply to this module.');
-$GLOBALS['TL_LANG']['tl_module']['globalCommonClasses'] 		= array('Global Common Classes', 'Select classes that apply to this module.');
+$GLOBALS['TL_LANG']['tl_module']['globalCommonClasses'] 	= array('Global Common Classes', 'Select classes that apply to this module.');
 
 
 /**
