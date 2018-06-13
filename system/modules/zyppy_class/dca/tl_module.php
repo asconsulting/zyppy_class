@@ -21,7 +21,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['exclusiveClass'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['exclusiveClass'],
 	'inputType'               => 'select',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getExclusiveClassOptions'),
-	'eval'					  => array('tl_class'=>'w50 wizard50'),
+	'eval'					  => array('tl_class'=>'w50'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );
 
