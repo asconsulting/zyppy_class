@@ -10,7 +10,7 @@
  */
 
  
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{css_chooser_legend},articleClasses,articleClassesRequired,articleCommonClasses,articleCommonRequired,contentClasses,contentClassesRequired,contentCommonClasses,contentCommonRequired,formFieldClasses,formFieldClassesRequired,formFieldCommonClasses,formFieldCommonRequired,formClasses,formClassesRequired,formCommonClasses,formCommonRequired,moduleClasses,moduleClassesRequired,moduleCommonClasses,moduleCommonRequired,pageClasses,pageClassesRequired,pageCommonClasses,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{class_legend},articleClasses,articleClassesRequired,articleCommonClasses,articleCommonRequired,contentClasses,contentClassesRequired,contentCommonClasses,contentCommonRequired,formFieldClasses,formFieldClassesRequired,formFieldCommonClasses,formFieldCommonRequired,formClasses,formClassesRequired,formCommonClasses,formCommonRequired,moduleClasses,moduleClassesRequired,moduleCommonClasses,moduleCommonRequired,pageClasses,pageClassesRequired,pageCommonClasses,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 
 /**

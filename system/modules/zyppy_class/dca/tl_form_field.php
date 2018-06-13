@@ -11,7 +11,7 @@
 
  
 foreach ($GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $key => $value) {
-	$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$key] = str_replace(';{expert_legend', ';{css_chooser_legend},primaryClass,commonClasses,globalCommonClasses;{expert_legend', $value);	
+	$GLOBALS['TL_DCA']['tl_form_field']['palettes'][$key] = str_replace(';{expert_legend', ';{class_legend},primaryClass,commonClasses,globalCommonClasses;{expert_legend', $value);	
 }
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['primaryClass'] = array(

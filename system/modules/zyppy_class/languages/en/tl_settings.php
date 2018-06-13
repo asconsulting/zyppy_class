@@ -73,4 +73,4 @@ $GLOBALS['TL_LANG']['tl_settings']['globalCommonRequired'] 		= array('Require Co
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_settings']['css_chooser_legend'] 	= 'CSS Selector';
+$GLOBALS['TL_LANG']['tl_settings']['class_legend'] 	= 'Class Settings';

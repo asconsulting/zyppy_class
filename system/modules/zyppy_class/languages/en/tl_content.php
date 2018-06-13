@@ -13,13 +13,13 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['cssPrimaryClass'] 			= array('CSS Class', 'Select which class to apply to this content element.');
-$GLOBALS['TL_LANG']['tl_content']['cssCommonClasses'] 			= array('Common Classes', 'Select classes that apply to this content element.');
+$GLOBALS['TL_LANG']['tl_content']['primaryClass'] 			= array('CSS Class', 'Select which class to apply to this content element.');
+$GLOBALS['TL_LANG']['tl_content']['commonClasses'] 			= array('Common Classes', 'Select classes that apply to this content element.');
 $GLOBALS['TL_LANG']['tl_content']['globalCommonClasses'] 		= array('Global Common Classes', 'Select classes that apply to this content element.');
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_content']['css_chooser_legend'] 		= 'CSS Selector';
+$GLOBALS['TL_LANG']['tl_content']['class_legend'] 		= 'Class Settings';
 

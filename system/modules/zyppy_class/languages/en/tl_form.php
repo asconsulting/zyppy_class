@@ -13,13 +13,13 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_form']['cssPrimaryClass'] 			= array('CSS Class', 'Select which class to apply to this form.');
-$GLOBALS['TL_LANG']['tl_form']['cssCommonClasses'] 			= array('Common Classes', 'Select classes that apply to this form.');
+$GLOBALS['TL_LANG']['tl_form']['primaryClass'] 			= array('CSS Class', 'Select which class to apply to this form.');
+$GLOBALS['TL_LANG']['tl_form']['commonClasses'] 			= array('Common Classes', 'Select classes that apply to this form.');
 $GLOBALS['TL_LANG']['tl_form']['globalCommonClasses'] 		= array('Global Common Classes', 'Select classes that apply to this form.');
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_form']['css_chooser_legend'] 		= 'CSS Selector';
+$GLOBALS['TL_LANG']['tl_form']['class_legend'] 		= 'Class Settings';
 

@@ -21,4 +21,4 @@ $GLOBALS['TL_LANG']['tl_article']['globalCommonClasses'] 	= array('Global Common
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_article']['css_chooser_legend'] 	= 'CSS Selector';
+$GLOBALS['TL_LANG']['tl_article']['class_legend'] 	= 'Class Settings';
