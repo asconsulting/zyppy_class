@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr wizard', 'style'=>'float:left;'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesRequired'] = array(
@@ -31,7 +31,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'wizard'),
+	'eval'                    => array('tl_class'=>'wizard', 'style'=>'float:left;'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonRequired'] = array(
