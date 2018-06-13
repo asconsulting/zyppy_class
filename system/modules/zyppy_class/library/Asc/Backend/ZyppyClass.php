@@ -104,6 +104,9 @@ class ZyppyClass extends \Backend
 		echo "getGlobalCommonClassOptions()<br>";
 		echo "<br>";
 		var_dump($dc->table);
+		echo "<br>";
+		echo $GLOBALS['TL_CONFIG']['globalCommonClasses'];
+		echo "<br><br>";
 		exit();
 		
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
