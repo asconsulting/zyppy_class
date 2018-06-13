@@ -118,6 +118,11 @@ class ZyppyClass extends \Backend
 	
 	public function setupRequiredFields(\Contao\DataContainer $dc)
 	{
+		
+		$strExit = substr(print_r($dc->table, TRUE), 0, 1000);
+		echo $strExit;
+		exit();
+		
 		switch($dc->table) {
 			case "tl_article":
 				$strClassField 		= 'articleClasses';
