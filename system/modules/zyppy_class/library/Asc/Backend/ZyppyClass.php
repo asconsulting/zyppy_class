@@ -151,13 +151,13 @@ class ZyppyClass extends \Backend
 		}
 		
 		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
-			
+			$GLOBALS['TL_DCA'][$dc->table]['fields'][$strClassField]['eval']['mandatory'] = true;
 		}
 		
-		echo "loadPrimaryClassField()<br>";
-		echo "<br>";
-		var_dump($dc->table);
-		exit();
+		//echo "loadPrimaryClassField()<br>";
+		//echo "<br>";
+		//var_dump($dc->table);
+		//exit();
 	}
 	
 	public function loadCommonClassField($varValue, \Contao\DataContainer $dc)
