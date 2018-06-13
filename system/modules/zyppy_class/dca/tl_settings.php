@@ -10,7 +10,7 @@
  */
 
  
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentClassesRequired,contentCommonClasses,contentCommonRequired,formFieldClasses,formFieldClassesRequired,formFieldCommonClasses,formFieldCommonRequired,formClasses,formClassesRequired,formCommonClasses,formCommonRequired,moduleClasses,moduleClassesRequired,moduleCommonClasses,moduleCommonRequired,pageClasses,pageClassesRequired,pageCommonClasses,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired,formClasses,formCommonClasses,formClassesRequired,formCommonRequired,moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired,pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 
 /**
@@ -48,7 +48,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClassesRequired'] = array(
@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonRequired'] = array(
@@ -77,7 +77,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClassesRequired'] = array(
@@ -89,7 +89,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonRequired'] = array(
@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formClassesRequired'] = array(
@@ -118,7 +118,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonRequired'] = array(
@@ -135,7 +135,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesRequired'] = array(
@@ -147,7 +147,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonRequired'] = array(
@@ -164,7 +164,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesRequired'] = array(
@@ -176,7 +176,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'w50 wizard50'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonRequired'] = array(
@@ -193,7 +193,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonRequired'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['globalCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['globalCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'clr w50 wizard50'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['globalCommonRequired'] = array(
