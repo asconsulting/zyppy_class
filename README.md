@@ -1,2 +1,2 @@
 # zyppy_class
-A module for contao to allow for easy assigning of pre-assigned CSS classes.
+A module for the Contao CMS to allow for easy selection of pre-configured CSS classes.
