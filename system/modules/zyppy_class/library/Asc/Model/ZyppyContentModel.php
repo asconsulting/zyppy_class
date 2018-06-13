@@ -34,7 +34,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 					$arrModuleCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
 				$arrModuleCss[1] = str_replace('  ', ' ', $arrModuleCss[1]);
-				$arrModuleCss[1] .= trim($arrModuleCss[1]);
+				$arrModuleCss[1] = trim($arrModuleCss[1]);
 				
 				$arrCommon = \StringUtil::deserialize($objModule->globalCommonClasses, true);
 				if (!empty($arrCommon)) {
@@ -56,14 +56,14 @@ class ZyppyContentModel extends \Contao\ContentModel
 					$arrFormCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
 				$arrFormCss[1] = str_replace('  ', ' ', $arrFormCss[1]);
-				$arrFormCss[1] .= trim($arrFormCss[1]);
+				$arrFormCss[1] = trim($arrFormCss[1]);
 				
 				$arrCommon = \StringUtil::deserialize($objForm->globalCommonClasses, true);
 				if (!empty($arrCommon)) {
 					$arrFormCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
 				$arrFormCss[1] = str_replace('  ', ' ', $arrFormCss[1]);
-				$arrCss[1] .= ' ' .trim($arrFormCss[1]);
+				$arrCss[1] = ' ' .trim($arrFormCss[1]);
 			}
 		}
 		
