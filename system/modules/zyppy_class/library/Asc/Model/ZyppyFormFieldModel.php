@@ -44,7 +44,7 @@ class ZyppyFormFieldModel extends \Contao\FormFieldModel
 				$arrClass[] = trim($strClass);
 			}
 		}
-		$strCss = implode(' ', $arrClass)
+		$strCss = implode(' ', $arrClass);
 		
 		$this->class = $strCss;
 	}
