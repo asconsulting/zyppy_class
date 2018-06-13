@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr w50'),
+	'eval'                    => array('tl_class'=>'clr w50', 'style'=>'background-color:red;'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesRequired'] = array(
