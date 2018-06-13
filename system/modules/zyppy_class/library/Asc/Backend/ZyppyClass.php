@@ -57,7 +57,10 @@ class ZyppyClass extends \Backend
 		}
 
 		if ($GLOBALS['TL_CONFIG'][$strClasses] != '') {
-			$arrOptions = array_merge(\StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strClasses], true), $arrOptions);
+			$arrTemp = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strClasses], true);
+			foreach ($arrTemp as $arrOption) {
+				$arrOptions[$arrOption['key']] = $arrOption['value'];
+			}
 		}
 		return $arrOptions;
 	}
@@ -93,12 +96,15 @@ class ZyppyClass extends \Backend
 
 		$arrOptions = array();
 		if ($GLOBALS['TL_CONFIG'][$strCommonClasses] != '') {
-			$arrOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
+			$arrTemp = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
+			foreach ($arrTemp as $arrOption) {
+				$arrOptions[$arrOption['key']] = $arrOption['value'];
+			}
 		}
 		return $arrOptions;
 	}
 	
-	public function getGlobalCommonClassOptions(\	Contao\DataContainer $dc) {
+	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
 		
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
