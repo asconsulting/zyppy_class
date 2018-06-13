@@ -150,7 +150,7 @@ class ZyppyClass extends \Backend
 			break;
 		}
 		
-		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
+		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields'][$strClassField]['eval']['mandatory'] = true;
 		}
 		
