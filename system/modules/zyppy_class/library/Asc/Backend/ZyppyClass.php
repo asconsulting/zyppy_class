@@ -98,7 +98,7 @@ class ZyppyClass extends \Backend
 		return $arrOptions;
 	}
 	
-	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
+	public function getGlobalCommonClassOptions(\	Contao\DataContainer $dc) {
 		$arrOptions = array();
 		
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
@@ -150,7 +150,7 @@ class ZyppyClass extends \Backend
 		
 		echo "loadPrimaryClassField()<br>";
 		echo "<br>";
-		var_dump($dc);
+		var_dump($dc->table);
 		exit();
 	}
 	
