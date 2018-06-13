@@ -198,6 +198,11 @@ class ZyppyClass extends \Backend
 			break;
 		}
 		
+		$arrPrimaryClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strPrimaryClasses], true);
+		var_dump($arrPrimaryClassOptions);
+		exit();
+		
+		
 		if (!$GLOBALS['TL_CONFIG'][$strPrimaryClasses]) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['inputType'] = false;
 		}
