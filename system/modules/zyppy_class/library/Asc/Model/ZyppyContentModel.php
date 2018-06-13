@@ -41,7 +41,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 					$arrModuleCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
 				$arrModuleCss[1] = str_replace('  ', ' ', $arrModuleCss[1]);
-				$arrCss[1] .= trim($arrModuleCss[1]);
+				$arrCss[1] .= ' ' .trim($arrModuleCss[1]);
 			}
 		}
 
@@ -63,7 +63,7 @@ class ZyppyContentModel extends \Contao\ContentModel
 					$arrFormCss[1] .= ' ' .implode(' ', $arrCommon);
 				}
 				$arrFormCss[1] = str_replace('  ', ' ', $arrFormCss[1]);
-				$arrCss[1] .= trim($arrFormCss[1]);
+				$arrCss[1] .= ' ' .trim($arrFormCss[1]);
 			}
 		}
 		
