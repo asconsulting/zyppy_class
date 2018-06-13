@@ -37,6 +37,6 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['globalCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['globalCommonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getGlobalCommonClassOptions'),
-	'eval'                    => array('multiple'=>true),
+	'eval'                    => array('multiple'=>true, 'tl_class'=>'w50 wizard50'),
 	'sql'                     => "blob NULL"
 );
