@@ -10,7 +10,7 @@
  */
 
  
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{class_legend},articleClasses,articleClassesRequired,articleCommonClasses,articleCommonRequired,contentClasses,contentClassesRequired,contentCommonClasses,contentCommonRequired,formFieldClasses,formFieldClassesRequired,formFieldCommonClasses,formFieldCommonRequired,formClasses,formClassesRequired,formCommonClasses,formCommonRequired,moduleClasses,moduleClassesRequired,moduleCommonClasses,moduleCommonRequired,pageClasses,pageClassesRequired,pageCommonClasses,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{global_legend', ';{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentClassesRequired,contentCommonClasses,contentCommonRequired,formFieldClasses,formFieldClassesRequired,formFieldCommonClasses,formFieldCommonRequired,formClasses,formClassesRequired,formCommonClasses,formCommonRequired,moduleClasses,moduleClassesRequired,moduleCommonClasses,moduleCommonRequired,pageClasses,pageClassesRequired,pageCommonClasses,pageCommonRequired,globalCommonClasses,globalCommonRequired;{global_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 
 /**
@@ -25,19 +25,19 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonClasses'],
 	'inputType'               => 'keyValueWizard',
-	'eval'                    => array('tl_class'=>'clr wizard'),
+	'eval'                    => array('tl_class'=>'wizard'),
 	'sql'                     => "meduimtext NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['articleCommonRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['articleCommonRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
