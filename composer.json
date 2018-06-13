@@ -1,6 +1,6 @@
 {
     "name":"asconsulting/zyppy_class",
-    "description":"A module for the Contao CMS to allow for easy assigning of pre-assigned CSS classes",
+    "description":"A module for the Contao CMS to allow for easy selection of pre-configured CSS classes.",
     "homepage": "https://andrewstevens.consulting",
     "keywords":["contao", "skeleton"],
     "type":"contao-module",
