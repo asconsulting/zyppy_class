@@ -54,7 +54,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['contentClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['contentCommonClasses'] = array(
@@ -83,7 +83,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formFieldClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formFieldCommonClasses'] = array(
@@ -112,7 +112,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['formClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['formClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['formCommonClasses'] = array(
@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['moduleClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['moduleCommonClasses'] = array(
@@ -170,7 +170,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClasses'] = array(
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageClassesRequired'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['pageClassesRequired'],
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('tl_class'=>'clr w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonClasses'] = array(
