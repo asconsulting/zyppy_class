@@ -119,50 +119,49 @@ class ZyppyClass extends \Backend
 	public function setupRequiredFields(\Contao\DataContainer $dc)
 	{
 		
-		$strExit = substr(print_r($dc->row(), TRUE), 0, 1000);
-		echo $strExit;
-		exit();
-		
 		switch($dc->table) {
 			case "tl_article":
-				$strClassField 		= 'articleClasses';
 				$strClassRequired 	= 'articleClassesRequired';
+				$strCommonRequired	= 'articleCommonRequired';
 			break;
 			
 			case "tl_content":
-				$strClassField 		= 'contentClasses';
 				$strClassRequired 	= 'contentClassesRequired';
+				$strCommonRequired	= 'contentCommonRequired';
 			break;
 			
 			case "tl_form_field":
-				$strClassField 		= 'formFieldClasses';
 				$strClassRequired 	= 'formFieldClassesRequired';
+				$strCommonRequired	= 'formFieldCommonRequired';
 			break;
 			
 			case "tl_form":
-				$strClassField 		= 'formClasses';
 				$strClassRequired 	= 'formClassesRequired';
+				$strCommonRequired	= 'formCommonRequired';
 			break;
 			
 			case "tl_module":
-				$strClassField 		= 'moduleClasses';
 				$strClassRequired 	= 'moduleClassesRequired';
+				$strCommonRequired	= 'moduleCommonRequired';
 			break;
 			
 			case "tl_page":
-				$strClassField 		= 'pageClasses';
 				$strClassRequired 	= 'pageClassesRequired';
+				$strCommonRequired	= 'pageCommonRequired';
 			break;
 		}
 		
 		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
-			$GLOBALS['TL_DCA'][$dc->table]['fields'][$strClassField]['eval']['mandatory'] = true;
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['eval']['mandatory'] = true;
 		}
 		
-		//echo "loadPrimaryClassField()<br>";
-		//echo "<br>";
-		//var_dump($dc->table);
-		//exit();
+		if ($GLOBALS['TL_CONFIG'][$strCommonRequired]) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['commonClasses']['eval']['mandatory'] = true;
+		}
+		
+		if ($GLOBALS['TL_CONFIG']['globalCommonRequired']) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['globalCommonClasses']['eval']['mandatory'] = true;
+		}
 	}
 	
 	public function loadPrimaryClassField($varValue, \Contao\DataContainer $dc)
