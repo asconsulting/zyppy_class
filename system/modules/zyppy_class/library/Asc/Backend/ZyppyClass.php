@@ -164,136 +164,50 @@ class ZyppyClass extends \Backend
 		}
 	}
 	
-	public function loadPrimaryClassField($varValue, \Contao\DataContainer $dc)
+	public function hideUnconfigured(\Contao\DataContainer $dc)
 	{
 		switch($dc->table) {
 			case "tl_article":
-				$strClassField 		= 'articleClasses';
-				$strClassRequired 	= 'articleClassesRequired';
+				$strPrimaryClasses = 'articleClasses';
+				$strCommonClasses = 'articleCommonClasses';
 			break;
 			
 			case "tl_content":
-				$strClassField 		= 'contentClasses';
-				$strClassRequired 	= 'contentClassesRequired';
+				$strPrimaryClasses = 'contentClasses';
+				$strCommonClasses = 'contentCommonClasses';
 			break;
 			
 			case "tl_form_field":
-				$strClassField 		= 'formFieldClasses';
-				$strClassRequired 	= 'formFieldClassesRequired';
+				$strPrimaryClasses = 'formFieldClasses';
+				$strCommonClasses = 'formFieldCommonClasses';
 			break;
 			
 			case "tl_form":
-				$strClassField 		= 'formClasses';
-				$strClassRequired 	= 'formClassesRequired';
+				$strPrimaryClasses = 'formClasses';
+				$strCommonClasses = 'formCommonClasses';
 			break;
 			
 			case "tl_module":
-				$strClassField 		= 'moduleClasses';
-				$strClassRequired 	= 'moduleClassesRequired';
+				$strPrimaryClasses = 'moduleClasses';
+				$strCommonClasses = 'moduleCommonClasses';
 			break;
 			
 			case "tl_page":
-				$strClassField 		= 'pageClasses';
-				$strClassRequired 	= 'pageClassesRequired';
+				$strPrimaryClasses = 'pageClasses';
+				$strCommonClasses = 'pageCommonClasses';
 			break;
 		}
 		
-		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
-			$GLOBALS['TL_DCA'][$dc->table]['fields'][$strClassField]['eval']['mandatory'] = true;
+		if (!$GLOBALS['TL_CONFIG'][$strPrimaryClasses]) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['inputType'] = false;
+		}
+				
+		if (!$GLOBALS['TL_CONFIG'][$strCommonClasses]) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['commonClasses']['inputType'] = false;
 		}
 		
-		//echo "loadPrimaryClassField()<br>";
-		//echo "<br>";
-		//var_dump($dc->table);
-		//exit();
-	}
-	
-	public function loadCommonClassField($varValue, \Contao\DataContainer $dc)
-	{
-		switch($dc->table) {
-			case "tl_article":
-				$strClassField 		= 'articleClasses';
-				$strClassRequired 	= 'articleClassesRequired';
-			break;
-			
-			case "tl_content":
-				$strClassField 		= 'contentClasses';
-				$strClassRequired 	= 'contentClassesRequired';
-			break;
-			
-			case "tl_form_field":
-				$strClassField 		= 'formFieldClasses';
-				$strClassRequired 	= 'formFieldClassesRequired';
-			break;
-			
-			case "tl_form":
-				$strClassField 		= 'formClasses';
-				$strClassRequired 	= 'formClassesRequired';
-			break;
-			
-			case "tl_module":
-				$strClassField 		= 'moduleClasses';
-				$strClassRequired 	= 'moduleClassesRequired';
-			break;
-			
-			case "tl_page":
-				$strClassField 		= 'pageClasses';
-				$strClassRequired 	= 'pageClassesRequired';
-			break;
+		if (!$GLOBALS['TL_CONFIG']['globalCommonClasses']) {
+			$GLOBALS['TL_DCA'][$dc->table]['fields']['globalCommonClasses']['inputType'] = false;
 		}
-		
-		echo "loadCommonClassField()<br>";
-		echo "<br>";
-		var_dump($dc->table);
-		exit();
 	}
-	
-	public function loadGlobalCommonClassField($varValue, \Contao\DataContainer $dc)
-	{
-		switch($dc->table) {
-			case "tl_article":
-				$strClassField 		= 'articleClasses';
-				$strClassRequired 	= 'articleClassesRequired';
-			break;
-			
-			case "tl_content":
-				$strClassField 		= 'contentClasses';
-				$strClassRequired 	= 'contentClassesRequired';
-			break;
-			
-			case "tl_form_field":
-				$strClassField 		= 'formFieldClasses';
-				$strClassRequired 	= 'formFieldClassesRequired';
-			break;
-			
-			case "tl_form":
-				$strClassField 		= 'formClasses';
-				$strClassRequired 	= 'formClassesRequired';
-			break;
-			
-			case "tl_module":
-				$strClassField 		= 'moduleClasses';
-				$strClassRequired 	= 'moduleClassesRequired';
-			break;
-			
-			case "tl_page":
-				$strClassField 		= 'pageClasses';
-				$strClassRequired 	= 'pageClassesRequired';
-			break;
-		}
-		
-		
-		echo "loadGlobalCommonClassField()<br>";
-		echo "<br>";
-		var_dump($dc->table);
-		exit();
-	}
-	
-	public function loadDca(\Contao\DataContainer $dc) {
-		echo "Load DCA<br>";
-		echo "<br>";
-		var_dump($dc->table);
-		exit();
-	}
-	
 }

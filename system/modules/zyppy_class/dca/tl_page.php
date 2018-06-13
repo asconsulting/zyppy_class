@@ -11,11 +11,11 @@
 
  
 $GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('\Asc\Backend\ZyppyClass', 'setupRequiredFields');
- 
+$GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('\Asc\Backend\ZyppyClass', 'hideUnconfigured');
+
 foreach ($GLOBALS['TL_DCA']['tl_page']['palettes'] as $key => $value) {
 	$GLOBALS['TL_DCA']['tl_page']['palettes'][$key] = str_replace(';{expert_legend', ';{class_legend},primaryClass,commonClasses,globalCommonClasses;{expert_legend', $value);	
 }
-
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['primaryClass'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['primaryClass'],
@@ -28,7 +28,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['commonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['commonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getCommonClassOptions'),
-	'load_callback'			  => array('\Asc\Backend\ZyppyClass', 'loadCommonClassField'),
 	'eval'                    => array('multiple'=>true),
 	'sql'                     => "blob NULL"
 );
@@ -37,7 +36,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['globalCommonClasses'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['globalCommonClasses'],
 	'inputType'               => 'checkboxWizard',
 	'options_callback'        => array('\Asc\Backend\ZyppyClass', 'getGlobalCommonClassOptions'),
-	'load_callback'			  => array('\Asc\Backend\ZyppyClass', 'loadGlobalCommonClassField'),
 	'eval'                    => array('multiple'=>true),
 	'sql'                     => "blob NULL"
 );
