@@ -202,21 +202,15 @@ class ZyppyClass extends \Backend
 		$arrCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
 		$arrGlobalCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
 		
-		var_dump($arrCommonClassOptions);
-		echo "<br><br>";
-		var_dump($GLOBALS['TL_CONFIG'][$strCommonClasses]);
-		exit();
-		
-		
-		if (!$GLOBALS['TL_CONFIG'][$strPrimaryClasses]) {
+		if (!$arrPrimaryClassOptions) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['primaryClass']['inputType'] = false;
 		}
 				
-		if (!$GLOBALS['TL_CONFIG'][$strCommonClasses]) {
+		if (!$arrCommonClassOptions) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['commonClasses']['inputType'] = false;
 		}
 		
-		if (!$GLOBALS['TL_CONFIG']['globalCommonClasses']) {
+		if (!$arrGlobalCommonClassOptions) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['globalCommonClasses']['inputType'] = false;
 		}
 	}
