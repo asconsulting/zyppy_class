@@ -203,6 +203,8 @@ class ZyppyClass extends \Backend
 		$arrGlobalCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
 		
 		var_dump($arrCommonClassOptions);
+		echo "<br><br>";
+		var_dump($GLOBALS['TL_CONFIG'][$strCommonClasses]);
 		exit();
 		
 		
