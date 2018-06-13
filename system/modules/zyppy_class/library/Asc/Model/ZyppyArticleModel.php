@@ -31,8 +31,8 @@ class ZyppyArticleModel extends \Contao\ArticleModel
 		$arrCss[1] = trim($arrCss[1]);
 
 		$arrGlobal = \StringUtil::deserialize($this->globalCommonClasses, true);
-		if (!empty($arrCommon)) {
-			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+		if (!empty($arrGlobal)) {
+			$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
 		}
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);

@@ -30,9 +30,9 @@ class ZyppyPageModel extends \Contao\PageModel
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
 	
-		$arrCommon = \StringUtil::deserialize($this->globalCommonClasses, true);
-		if (!empty($arrCommon)) {
-			$strCss .= ' ' .implode(' ', $arrCommon);
+		$arrGlobal = \StringUtil::deserialize($this->globalCommonClasses, true);
+		if (!empty($arrGlobal)) {
+			$strCss .= ' ' .implode(' ', $arrGlobal);
 		}
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
