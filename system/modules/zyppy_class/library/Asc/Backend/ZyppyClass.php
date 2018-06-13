@@ -119,7 +119,7 @@ class ZyppyClass extends \Backend
 	public function setupRequiredFields(\Contao\DataContainer $dc)
 	{
 		
-		$strExit = substr(print_r($dc->table, TRUE), 0, 1000);
+		$strExit = substr(print_r($dc, TRUE), 0, 1000);
 		echo $strExit;
 		exit();
 		
