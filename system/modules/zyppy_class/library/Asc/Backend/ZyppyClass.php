@@ -104,7 +104,7 @@ class ZyppyClass extends \Backend
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
 			$arrTemp = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
 			foreach ($arrTemp as $arrOption) {
-				$arrOptions['key'] = $arrOptions['value'];
+				$arrOptions[$arrOption['key']] = $arrOptions[$arrOption['value']];
 			}
 		}
 		return $arrOptions;
