@@ -100,6 +100,10 @@ class ZyppyClass extends \Backend
 	
 	public function getGlobalCommonClassOptions(\Contao\DataContainer $dc) {
 		$arrOptions = array();
+		
+		var_dump($dc);
+		exit();
+		
 		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
 			$arrOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
 		}
