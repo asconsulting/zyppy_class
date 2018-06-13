@@ -199,7 +199,10 @@ class ZyppyClass extends \Backend
 		}
 		
 		$arrPrimaryClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strPrimaryClasses], true);
-		var_dump($arrPrimaryClassOptions);
+		$arrCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
+		$arrGlobalCommonClassOptions = \StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
+		
+		var_dump($arrGlobalCommonClassOptions);
 		exit();
 		
 		
