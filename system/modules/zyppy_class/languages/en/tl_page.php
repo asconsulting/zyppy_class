@@ -13,7 +13,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_page']['exclusiveClass'] 			= array('Exclusive Class', 'Select which class to apply to this page.');
+$GLOBALS['TL_LANG']['tl_page']['exclusiveClass'] 		= array('Exclusive Class', 'Select which class to apply to this page.');
 $GLOBALS['TL_LANG']['tl_page']['commonClasses'] 		= array('Common Classes', 'Select classes that apply to this page.');
 $GLOBALS['TL_LANG']['tl_page']['globalCommonClasses'] 	= array('Global Common Classes', 'Select classes that apply to this pagee.');
 
