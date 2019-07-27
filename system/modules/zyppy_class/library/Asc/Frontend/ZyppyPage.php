@@ -13,6 +13,7 @@
 namespace Asc\Frontend;
 
 class ZyppyPage extends \Frontend
+{
 
 	public function generatePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
 	{
