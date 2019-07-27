@@ -17,9 +17,13 @@ $GLOBALS['TL_MODELS']['tl_module'] 		= 'Asc\Model\ZyppyModuleModel';
 $GLOBALS['TL_MODELS']['tl_page'] 		= 'Asc\Model\ZyppyPageModel';
 
 
+
+$GLOBALS['TL_HOOKS']['generatePage'][] = array('Asc\Frontend\ZyppyPage', 'generatePage');
+
 /**
  * Styles
  */
  if (version_compare(VERSION, '4.4', '>=')) {
 	$GLOBALS['TL_CSS'][] = 'system/modules/zyppy_class/assets/css/backend-contao4.css|static';
 }
+
