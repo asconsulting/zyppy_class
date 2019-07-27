@@ -44,10 +44,6 @@ class ZyppyPage extends \Frontend
 		$strCss = implode(' ', $arrClass);
 		
 		$objPage->cssClass = $strCss;
-		
-		
-		var_dump($objPage);
-		exit();
 	}
 
 }
