@@ -10,7 +10,7 @@
  */
 
  
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace(';{files_legend', ';{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired,formClasses,formCommonClasses,formClassesRequired,formCommonRequired,moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired,pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired,globalCommonClasses,globalCommonRequired;{files_legend', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= "{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired,formClasses,formCommonClasses,formClassesRequired,formCommonRequired,moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired,pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired,globalCommonClasses,globalCommonRequired;";
 
 
 /**
