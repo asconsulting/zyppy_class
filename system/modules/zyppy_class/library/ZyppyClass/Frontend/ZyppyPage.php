@@ -20,7 +20,7 @@ use Contao\StringUtil;
 class ZyppyPage extends Contao_Frontend
 {
 
-	public function generatePage($objPage, $objLayout, $objPageRegular)
+	public function generatePage(&$objPage, $objLayout, $objPageRegular)
 	{
 		$strCss = $objPage->cssClass;
 		$strCss .= ' ' .$objPage->exclusiveClass;
@@ -49,7 +49,6 @@ class ZyppyPage extends Contao_Frontend
 		$strCss = implode(' ', $arrClass);
 
 		$objPage->cssClass = $strCss;
-		die($strCss);
 	}
 
 }
