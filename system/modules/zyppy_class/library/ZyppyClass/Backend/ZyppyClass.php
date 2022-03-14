@@ -13,7 +13,7 @@
 
 namespace ZyppyClass\Backend;
 
-use Contao\Backend as Contao_Backend
+use Contao\Backend as Contao_Backend;
 use Contao\StringUtil;
 use Contao\DataContainer;
 
