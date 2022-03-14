@@ -24,33 +24,33 @@ class ZyppyForm extends Contao_Frontend
 	{
 
 		foreach($arrFields as $intIndex => $objFormField) {
-			$arrCss = StringUtil::deserialize($objFormField->cssID, true);
-			$arrCss[1] .= ' ' .$objFormField->exclusiveClass;
+			$strCssClass = StringUtil::deserialize($objFormField->class, true);
+			$strCssClass .= ' ' .$objFormField->exclusiveClass;
 
 			$arrCommon = StringUtil::deserialize($objFormField->commonClasses, true);
 			if (!empty($arrCommon)) {
-				$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+				$strCssClass .= ' ' .implode(' ', $arrCommon);
 			}
-			$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
-			$arrCss[1] = trim($arrCss[1]);
+			$strCssClass = str_replace('  ', ' ', $strCssClass);
+			$strCssClass = trim($strCssClass);
 
 			$arrGlobal = StringUtil::deserialize($objFormField->globalCommonClasses, true);
 			if (!empty($arrGlobal)) {
-				$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
+				$strCssClass .= ' ' .implode(' ', $arrGlobal);
 			}
-			$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
-			$arrCss[1] = trim($arrCss[1]);
+			$strCssClass = str_replace('  ', ' ', $strCssClass);
+			$strCssClass = trim($strCssClass);
 
-			$arrTemp = explode(' ', $arrCss[1]);
+			$arrTemp = explode(' ', $strCssClass);
 			$arrClass = array();
 			foreach ($arrTemp as $strClass) {
 				if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
 					$arrClass[] = trim($strClass);
 				}
 			}
-			$arrCss[1] = implode(' ', $arrClass);
+			$strCssClass = implode(' ', $arrClass);
 
-			$objFormField->cssID = $arrCss;
+			$objFormField->class .= ' ' .$strCssClass;
 			$arrFields[$intIndex] = $objFormField;
 
 		}
