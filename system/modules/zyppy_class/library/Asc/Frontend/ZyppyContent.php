@@ -20,20 +20,20 @@ use Contao\StringUtil;
 class ZyppyContent extends Contao_Frontend
 {
 
-	public function generateContent($objRow, $strBuffer, $objContent)
+	public function generateContent($objRow, $strBuffer, $objElement)
 	{
 
-		$arrCss = StringUtil::deserialize($objContent->cssID, true);
-		$arrCss[1] .= ' ' .$objContent->exclusiveClass;
+		$arrCss = StringUtil::deserialize($objElement->cssID, true);
+		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
 
-		$arrCommon = StringUtil::deserialize($objContent->commonClasses, true);
+		$arrCommon = StringUtil::deserialize($objElement->commonClasses, true);
 		if (!empty($arrCommon)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
 		}
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
 
-		$arrGlobal = StringUtil::deserialize($objContent->globalCommonClasses, true);
+		$arrGlobal = StringUtil::deserialize($objElement->globalCommonClasses, true);
 		if (!empty($arrGlobal)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
 		}
@@ -49,7 +49,7 @@ class ZyppyContent extends Contao_Frontend
 		}
 		$arrCss[1] = implode(' ', $arrClass);
 
-		$objContent->cssID = $arrCss;
+		$objElement->cssID = $arrCss;
 		
 		return $objElement->generate();
 	}
