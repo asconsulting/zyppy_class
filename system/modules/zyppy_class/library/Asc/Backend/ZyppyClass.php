@@ -214,4 +214,9 @@ class ZyppyClass extends \Backend
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['globalCommonClasses']['inputType'] = false;
 		}
 	}
+	
+	public function setupPalette() {
+		die('Files Setup');
+	}
+	
 }
