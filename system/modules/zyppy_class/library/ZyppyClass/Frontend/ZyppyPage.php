@@ -39,8 +39,6 @@ class ZyppyPage extends Contao_Frontend
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
 
-die($strCss);
-
 		$arrTemp = explode(' ', $strCss);
 		$arrClass = array();
 		foreach ($arrTemp as $strClass) {
@@ -51,7 +49,7 @@ die($strCss);
 		$strCss = implode(' ', $arrClass);
 
 		$objPage->cssClass = $strCss;
-		die($strClass);
+		die($strCss);
 	}
 
 }
