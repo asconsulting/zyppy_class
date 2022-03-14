@@ -20,7 +20,7 @@ use Contao\StringUtil;
 class ZyppyArticle extends Contao_Frontend
 {
 
-	public function generateArticle($objArticle)
+	public function generateArticle(&$objArticle)
 	{
 
 		$arrCss = StringUtil::deserialize($objArticle->cssID, true);
