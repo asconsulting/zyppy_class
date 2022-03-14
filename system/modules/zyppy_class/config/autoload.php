@@ -3,7 +3,7 @@
 /**
  * Zyppy Class
  *
- * Copyright (C) 2022 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -16,17 +16,9 @@
  */
 ClassLoader::addClasses(array
 (
-	'Asc\Backend\ZyppyClass' 					=> 'system/modules/zyppy_class/library/Asc/Backend/ZyppyClass.php',
-
-	'Asc\Frontend\ZyppyArticle' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyArticle.php',
-	'Asc\Frontend\ZyppyContent' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyContent.php',
-	'Asc\Frontend\ZyppyForm' 					=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyForm.php',
-
-	'Asc\Model\ZyppyArticleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyArticleModel.php',
-	'Asc\Model\ZyppyContentModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyContentModel.php',
-	'Asc\Model\ZyppyFormFieldModel' 			=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyFormFieldModel.php',
-	'Asc\Model\ZyppyFormModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyFormModel.php',
-	'Asc\Model\ZyppyModuleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyModuleModel.php',
-	'Asc\Model\ZyppyPageModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyPageModel.php',
-
+	'ZyppyClass\Backend\ZyppyClass' 		=> 'system/modules/zyppy_class/library/ZyppyClass/Backend/ZyppyClass.php',
+	'ZyppyClass\Frontend\ZyppyArticle' 		=> 'system/modules/zyppy_class/library/ZyppyClass/Frontend/ZyppyArticle.php',
+	'ZyppyClass\Frontend\ZyppyContent' 		=> 'system/modules/zyppy_class/library/ZyppyClass/Frontend/ZyppyContent.php',
+	'ZyppyClass\Frontend\ZyppyForm' 		=> 'system/modules/zyppy_class/library/ZyppyClass/Frontend/ZyppyForm.php',
+	'ZyppyClass\Frontend\ZyppyPage' 		=> 'system/modules/zyppy_class/library/ZyppyClass/Frontend/ZyppyPage.php',
 ));

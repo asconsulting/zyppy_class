@@ -3,17 +3,19 @@
 /**
  * Zyppy Class
  *
- * Copyright (C) 2022 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
  */
 
- 
- 
-namespace Asc\Frontend;
+
+
+namespace ZyppyClass\Frontend;
 
 use Contao\Frontend as Contao_Frontend;
+use Contao\StringUtil;
+
 
 class ZyppyPage extends Contao_Frontend
 {
@@ -29,14 +31,14 @@ class ZyppyPage extends Contao_Frontend
 		}
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
-	
+
 		$arrGlobal = \StringUtil::deserialize($objPage->globalCommonClasses, true);
 		if (!empty($arrGlobal)) {
 			$strCss .= ' ' .implode(' ', $arrGlobal);
 		}
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
-		
+
 		$arrTemp = explode(' ', $strCss);
 		$arrClass = array();
 		foreach ($arrTemp as $strClass) {
@@ -45,7 +47,7 @@ class ZyppyPage extends Contao_Frontend
 			}
 		}
 		$strCss = implode(' ', $arrClass);
-		
+
 		$objPage->cssClass = $strCss;
 	}
 

@@ -1,9 +1,9 @@
 <?php
- 
+
 /**
  * Zyppy Class
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -11,6 +11,7 @@
  * German Language Translation by Tilman Behrend
  *
  */
+
 
 
 /**
@@ -77,6 +78,11 @@ $GLOBALS['TL_LANG']['tl_settings']['globalCommonRequired'] 		= array('Erfordet e
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_settings']['class_legend'] 				= 'Klassen-Einstellungen';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_global_class_legend'] 	= 'Globale Klassen';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_page_class_legend'] 		= 'Seite-Klasse';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_article_class_legend'] 	= 'Artikel-Klasse';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_content_class_legend'] 	= 'Inhaltselement-Klasse';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_form_class_legend'] 		= 'Formular-Klasse';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_module_class_legend'] 	= 'Modul-Klasse';
 
 

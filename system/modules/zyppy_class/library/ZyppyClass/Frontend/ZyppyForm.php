@@ -3,7 +3,7 @@
 /**
  * Zyppy Class
  *
- * Copyright (C) 2022 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -11,7 +11,7 @@
 
 
 
-namespace Asc\Frontend;
+namespace ZyppyClass\Frontend;
 
 use Contao\Frontend as Contao_Frontend;
 use Contao\StringUtil;
@@ -52,9 +52,9 @@ class ZyppyForm extends Contao_Frontend
 
 			$objFormField->cssID = $arrCss;
 			$arrFields[$intIndex] = $objFormField;
-		
+
 		}
-		
+
 		return $arrFields;
 	}
 

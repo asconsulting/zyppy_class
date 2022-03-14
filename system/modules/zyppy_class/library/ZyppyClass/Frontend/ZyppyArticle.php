@@ -3,7 +3,7 @@
 /**
  * Zyppy Class
  *
- * Copyright (C) 2022 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -11,29 +11,29 @@
 
 
 
-namespace Asc\Frontend;
+namespace ZyppyClass\Frontend;
 
 use Contao\Frontend as Contao_Frontend;
 use Contao\StringUtil;
 
 
-class ZyppyContent extends Contao_Frontend
+class ZyppyArticle extends Contao_Frontend
 {
 
-	public function generateContent($objRow, $strBuffer, $objElement)
+	public function generateArticle($objArticle)
 	{
 
-		$arrCss = StringUtil::deserialize($objElement->cssID, true);
-		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
+		$arrCss = StringUtil::deserialize($objArticle->cssID, true);
+		$arrCss[1] .= ' ' .$objArticle->exclusiveClass;
 
-		$arrCommon = StringUtil::deserialize($objElement->commonClasses, true);
+		$arrCommon = StringUtil::deserialize($objArticle->commonClasses, true);
 		if (!empty($arrCommon)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
 		}
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
 
-		$arrGlobal = StringUtil::deserialize($objElement->globalCommonClasses, true);
+		$arrGlobal = StringUtil::deserialize($objArticle->globalCommonClasses, true);
 		if (!empty($arrGlobal)) {
 			$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
 		}
@@ -49,9 +49,7 @@ class ZyppyContent extends Contao_Frontend
 		}
 		$arrCss[1] = implode(' ', $arrClass);
 
-		$objElement->cssID = $arrCss;
-		
-		return $objElement->generate();
+		$objArticle->cssID = $arrCss;
 	}
 
 }

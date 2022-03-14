@@ -21,8 +21,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Asc\\": [
-                "system/modules/zyppy_page/library/Asc"
+            "ZyppyClass\\": [
+                "system/modules/zyppy_class/library/ZyppyClass"
             ]
         }
     },

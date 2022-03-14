@@ -1,9 +1,9 @@
 <?php
- 
+
 /**
  * Zyppy Class
  *
- * Copyright (C) 2022 Andrew Stevens Consulting
+ * Copyright (C) 2018-2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -11,7 +11,7 @@
 
 
 
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= 
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .=
 ";{zyppy_global_class_legend},globalCommonClasses,globalCommonRequired;".
 "{zyppy_page_class_legend},pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired;".
 "{zyppy_article_class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired;".
