@@ -3,7 +3,7 @@
 /**
  * Zyppy Class
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
@@ -11,9 +11,13 @@
 
 
 
-//$GLOBALS['TL_DCA']['tl_settings']['config']['onload_callback'][] = array('Asc\Backend\ZyppyClass', 'setupPalette');
-
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= "{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired,formClasses,formCommonClasses,formClassesRequired,formCommonRequired,moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired,pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired,globalCommonClasses,globalCommonRequired;";
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= 
+";{zyppy_global_class_legend},globalCommonClasses,globalCommonRequired;".
+"{zyppy_page_class_legend},pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired;".
+"{zyppy_article_class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired;".
+"{zyppy_content_class_legend},contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired;".
+"{zyppy_form_class_legend},formClasses,formCommonClasses,formClassesRequired,formCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired;".
+"{zyppy_module_class_legend},moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired;";
 
 
 /**

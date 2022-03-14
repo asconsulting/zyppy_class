@@ -1,13 +1,14 @@
 <?php
- 
+
 /**
  * Zyppy Class
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
  */
+
 
 
 /**
@@ -70,7 +71,13 @@ $GLOBALS['TL_LANG']['tl_settings']['pageCommonRequired'] 		= array('Page Require
 $GLOBALS['TL_LANG']['tl_settings']['globalCommonClasses'] 		= array('Global Common Classes', 'Classes available at all levels.');
 $GLOBALS['TL_LANG']['tl_settings']['globalCommonRequired'] 		= array('Require Common Class', 'Require at least one common class be chosen.');
 
+
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_settings']['class_legend'] 				= 'Class Settings';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_global_class_legend'] 	= 'Global Classes';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_page_class_legend'] 		= 'Page Classes';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_article_class_legend'] 	= 'Article Classes';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_content_class_legend'] 	= 'Content Classes';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_form_class_legend'] 		= 'Form Classes';
+$GLOBALS['TL_LANG']['tl_settings']['zyppy_module_class_legend'] 	= 'Module Classes';
