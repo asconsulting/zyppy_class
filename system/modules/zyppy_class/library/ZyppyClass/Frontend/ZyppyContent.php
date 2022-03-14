@@ -40,6 +40,23 @@ class ZyppyContent extends Contao_Frontend
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
 
+	$arrCss = array_merge($arrCss, StringUtil::deserialize($objRow->cssID, true));
+	$arrCss[1] .= ' ' .$objRow->exclusiveClass;
+
+	$arrCommon = StringUtil::deserialize($objRow->commonClasses, true);
+	if (!empty($arrCommon)) {
+		$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+	}
+	$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+	$arrCss[1] = trim($arrCss[1]);
+
+	$arrGlobal = StringUtil::deserialize($objRow->globalCommonClasses, true);
+	if (!empty($arrGlobal)) {
+		$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
+	}
+	$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+	$arrCss[1] = trim($arrCss[1]);	
+		
 		$arrTemp = explode(' ', $arrCss[1]);
 		$arrClass = array();
 		foreach ($arrTemp as $strClass) {
