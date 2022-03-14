@@ -21,7 +21,7 @@ $GLOBALS['TL_MODELS']['tl_module'] 		= 'Asc\Model\ZyppyModuleModel';
 
 $GLOBALS['TL_HOOKS']['generatePage'][] = array('Asc\Frontend\ZyppyPage', 'generatePage');
 
-$GLOBALS['TL_HOOKS']['getArticle'][] = array('Asc\Frontend\ZyppyArticle', 'generatePage');
+$GLOBALS['TL_HOOKS']['getArticle'][] = array('Asc\Frontend\ZyppyArticle', 'generateArticle');
 
 
 /**
