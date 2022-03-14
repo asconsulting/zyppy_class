@@ -12,19 +12,16 @@
         }
     ],
     "require":{
-        "php": "~5.4 || ~7.0",
-        "contao/core-bundle": "~4.4"
+        "php": ">=7.2",
+        "contao/core-bundle": ">=4.9"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Asc\\": [
-                "system/modules/zyppy_class/library"
-            ],
-			"Contao\\": [
-                "system/modules/zyppy_class/library"
+                "system/modules/zyppy_page/library/Asc"
             ]
         }
     },
