@@ -215,8 +215,4 @@ class ZyppyClass extends \Backend
 		}
 	}
 	
-	public function setupPalette() {
-		die('Files Setup');
-	}
-	
 }

@@ -20,6 +20,7 @@ ClassLoader::addClasses(array
 
 	'Asc\Frontend\ZyppyArticle' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyArticle.php',
 	'Asc\Frontend\ZyppyContent' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyContent.php',
+	'Asc\Frontend\ZyppyForm' 					=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyForm.php',
 
 	'Asc\Model\ZyppyArticleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyArticleModel.php',
 	'Asc\Model\ZyppyContentModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyContentModel.php',
