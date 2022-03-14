@@ -20,7 +20,7 @@ use Contao\StringUtil;
 class ZyppyContent extends Contao_Frontend
 {
 
-	public function generateContent($objContent)
+	public function generateContent($objRow, $strBuffer, $objContent)
 	{
 
 		$arrCss = StringUtil::deserialize($objContent->cssID, true);
@@ -50,6 +50,8 @@ class ZyppyContent extends Contao_Frontend
 		$arrCss[1] = implode(' ', $arrClass);
 
 		$objContent->cssID = $arrCss;
+		
+		return $objElement->generate();
 	}
 
 }
