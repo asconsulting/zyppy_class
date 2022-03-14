@@ -22,17 +22,17 @@ class ZyppyPage extends Contao_Frontend
 
 	public function generatePage($objPage, $objLayout, $objPageRegular)
 	{
-		$strCss = $objPage->cssClass;
-		$strCss .= ' ' .$objPage->exclusiveClass;
+		$strCss = $objPageRegular->cssClass;
+		$strCss .= ' ' .$objPageRegular->exclusiveClass;
 
-		$arrCommon = \StringUtil::deserialize($objPage->commonClasses, true);
+		$arrCommon = \StringUtil::deserialize($objPageRegular->commonClasses, true);
 		if (!empty($arrCommon)) {
 			$strCss .= ' ' .implode(' ', $arrCommon);
 		}
 		$strCss = str_replace('  ', ' ', $strCss);
 		$strCss = trim($strCss);
 
-		$arrGlobal = \StringUtil::deserialize($objPage->globalCommonClasses, true);
+		$arrGlobal = \StringUtil::deserialize($objPageRegular->globalCommonClasses, true);
 		if (!empty($arrGlobal)) {
 			$strCss .= ' ' .implode(' ', $arrGlobal);
 		}
@@ -48,7 +48,7 @@ class ZyppyPage extends Contao_Frontend
 		}
 		$strCss = implode(' ', $arrClass);
 
-		$objPage->cssClass = $strCss;
+		$objPageRegular->cssClass = $strCss;
 	}
 
 }
