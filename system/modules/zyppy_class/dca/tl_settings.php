@@ -16,8 +16,8 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .=
 "{zyppy_page_class_legend},pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired;".
 "{zyppy_article_class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired;".
 "{zyppy_content_class_legend},contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired;".
-"{zyppy_form_class_legend},formClasses,formCommonClasses,formClassesRequired,formCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired;".
-"{zyppy_module_class_legend},moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired;";
+"{zyppy_module_class_legend},moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired;".
+"{zyppy_form_class_legend},formClasses,formCommonClasses,formClassesRequired,formCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired;";
 
 
 /**
