@@ -24,7 +24,7 @@ class ZyppyForm extends Contao_Frontend
 	{
 
 		foreach($arrFields as $intIndex => $objFormField) {
-			$strCssClass = StringUtil::deserialize($objFormField->class, true);
+			$strCssClass = $objFormField->class;
 			$strCssClass .= ' ' .$objFormField->exclusiveClass;
 
 			$arrCommon = StringUtil::deserialize($objFormField->commonClasses, true);
