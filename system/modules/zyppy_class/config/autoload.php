@@ -1,23 +1,25 @@
 <?php
- 
+
 /**
  * Zyppy Class
  *
- * Copyright (C) 2018 Andrew Stevens Consulting
+ * Copyright (C) 2022 Andrew Stevens Consulting
  *
  * @package    asconsulting/zyppy_class
  * @link       https://andrewstevens.consulting
  */
 
- 
+
+
 /**
  * Register the classes
  */
 ClassLoader::addClasses(array
 (
 	'Asc\Backend\ZyppyClass' 					=> 'system/modules/zyppy_class/library/Asc/Backend/ZyppyClass.php',
-	
+
 	'Asc\Frontend\ZyppyArticle' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyArticle.php',
+	'Asc\Frontend\ZyppyContent' 				=> 'system/modules/zyppy_class/library/Asc/Frontend/ZyppyContent.php',
 
 	'Asc\Model\ZyppyArticleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyArticleModel.php',
 	'Asc\Model\ZyppyContentModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyContentModel.php',
@@ -25,5 +27,5 @@ ClassLoader::addClasses(array
 	'Asc\Model\ZyppyFormModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyFormModel.php',
 	'Asc\Model\ZyppyModuleModel' 				=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyModuleModel.php',
 	'Asc\Model\ZyppyPageModel' 					=> 'system/modules/zyppy_class/library/Asc/Model/ZyppyPageModel.php',
-	
+
 ));
