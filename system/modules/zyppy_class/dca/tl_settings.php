@@ -11,7 +11,7 @@
 
 
 
-$GLOBALS['TL_DCA']['tl_settings']['config']['onload_callback'][] = array('Asc\Backend\ZyppyClass', 'setupPalette');
+//$GLOBALS['TL_DCA']['tl_settings']['config']['onload_callback'][] = array('Asc\Backend\ZyppyClass', 'setupPalette');
 
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= "{class_legend},articleClasses,articleCommonClasses,articleClassesRequired,articleCommonRequired,contentClasses,contentCommonClasses,contentClassesRequired,contentCommonRequired,formFieldClasses,formFieldCommonClasses,formFieldClassesRequired,formFieldCommonRequired,formClasses,formCommonClasses,formClassesRequired,formCommonRequired,moduleClasses,moduleCommonClasses,moduleClassesRequired,moduleCommonRequired,pageClasses,pageCommonClasses,pageClassesRequired,pageCommonRequired,globalCommonClasses,globalCommonRequired;";
 
