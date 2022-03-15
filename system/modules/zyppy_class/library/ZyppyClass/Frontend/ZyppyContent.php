@@ -13,6 +13,7 @@
 
 namespace ZyppyClass\Frontend;
 
+use Contao\ContentElement;
 use Contao\Frontend as Contao_Frontend;
 use Contao\ModuleModel;
 use Contao\StringUtil;
