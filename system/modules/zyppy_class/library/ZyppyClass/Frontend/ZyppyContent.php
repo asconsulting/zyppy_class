@@ -28,23 +28,6 @@ class ZyppyContent extends Contao_Frontend
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objRow = ModuleModel::findByPk($objRow->module);
 		}
-		
-		if (is_a($objElement, 'Contao\ContentImage')) {
-			var_dump($objRow);
-			echo "<hr>";	
-			echo htmlspecialchars($strBuffer);
-			echo "<hr>";			
-			
-			
-		$strClass = ContentElement::findClass($objRow->type);
-		$objRow->typePrefix = 'ce_';
-		$strStopWatchId = 'contao.content_element.' . $objRow->type . ' (ID ' . $objRow->id . ')';
-		$objElement = new $strClass($objRow, $strColumn);
-			
-			echo htmlspecialchars($objElement->generate());
-			echo "<hr>";
-			return $strBuffer;
-		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
 		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
@@ -95,9 +78,15 @@ class ZyppyContent extends Contao_Frontend
 			}
 		}
 		$arrCss[1] = implode(' ', $arrClass);
-
-		$objElement->cssID = $arrCss;
-
+		
+		if (is_a($objElement, 'Contao\ContentImage')) {
+			$strClass = ContentElement::findClass($objRow->type);
+			$objRow->typePrefix = 'ce_';
+			$objRow->cssID = $arrCss;
+			$objElement = new $strClass($objRow, $strColumn);
+		} else {
+			$objElement->cssID = $arrCss;
+		}
 		return $objElement->generate();
 	}
 
