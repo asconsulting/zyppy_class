@@ -34,7 +34,6 @@ class ZyppyContent extends Contao_Frontend
 			echo "<hr>";
 			var_dump($objElement);
 			echo "<hr>";
-			
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
