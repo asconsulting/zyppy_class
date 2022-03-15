@@ -31,6 +31,8 @@ class ZyppyContent extends Contao_Frontend
 		if (is_a($objElement, 'Contao\ContentImage')) {
 			var_dump($objRow);
 			echo "<hr>";	
+			echo htmlspecialchars($strBuffer);
+			echo "<hr>";
 			return $strBuffer;
 		}
 
