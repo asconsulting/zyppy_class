@@ -33,6 +33,13 @@ class ZyppyContent extends Contao_Frontend
 			echo "<hr>";	
 			echo htmlspecialchars($strBuffer);
 			echo "<hr>";			
+			
+			
+		$strClass = ContentElement::findClass($objRow->type);
+		$objRow->typePrefix = 'ce_';
+		$strStopWatchId = 'contao.content_element.' . $objRow->type . ' (ID ' . $objRow->id . ')';
+		$objElement = new $strClass($objRow, $strColumn);
+			
 			echo htmlspecialchars($objElement->generate());
 			echo "<hr>";
 			return $strBuffer;
