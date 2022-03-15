@@ -29,11 +29,11 @@ class ZyppyContent extends Contao_Frontend
 		}
 		
 		if (is_a($objElement, 'Contao\ContentImage')) {
-			return $strBuffer;
 			var_dump($objRow);
 			echo "<hr>";
 			var_dump($objElement);
-			echo "<hr>";
+			echo "<hr>";			
+			return $strBuffer;
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
