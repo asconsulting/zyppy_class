@@ -32,6 +32,8 @@ class ZyppyContent extends Contao_Frontend
 			var_dump($objRow);
 			echo "<hr>";	
 			echo htmlspecialchars($strBuffer);
+			echo "<hr>";			
+			echo htmlspecialchars($objElement->generate());
 			echo "<hr>";
 			return $strBuffer;
 		}
