@@ -23,6 +23,8 @@ class ZyppyContent extends Contao_Frontend
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
 
+		echo get_class($objElement) ."<hr>";
+
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
 		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
 
