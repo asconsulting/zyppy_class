@@ -32,6 +32,8 @@ class ZyppyContent extends Contao_Frontend
 			echo "<hr>";
 			var_dump($objRow->globalCommonClasses);
 			echo "<hr>";
+			var_dump($objRow);
+			echo "<hr>";
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
