@@ -14,6 +14,7 @@
 namespace ZyppyClass\Frontend;
 
 use Contao\Frontend as Contao_Frontend;
+use Contao\ModuleModel;
 use Contao\StringUtil;
 
 
@@ -24,16 +25,7 @@ class ZyppyContent extends Contao_Frontend
 	{
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
-			var_dump($objElement->commonClasses);
-			echo "<hr>";
-			var_dump($objElement->globalCommonClasses);
-			echo "<hr>";
-			var_dump($objRow->commonClasses);
-			echo "<hr>";
-			var_dump($objRow->globalCommonClasses);
-			echo "<hr>";
-			var_dump($objRow);
-			echo "<hr>";
+			$objRow = ModuleModel::findByPk($objRow->module);
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
