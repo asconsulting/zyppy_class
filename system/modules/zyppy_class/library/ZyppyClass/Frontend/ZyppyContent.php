@@ -84,6 +84,11 @@ class ZyppyContent extends Contao_Frontend
 			$objRow->typePrefix = 'ce_';
 			$objRow->cssID = $arrCss;
 			$objElement = new $strClass($objRow, $strColumn);
+		} else if (is_a($objElement, 'Contao\ContentDownload')) {
+			$strClass = ContentElement::findClass($objRow->type);
+			$objRow->typePrefix = 'ce_';
+			$objRow->cssID = $arrCss;
+			$objElement = new $strClass($objRow, $strColumn);
 		} else {
 			$objElement->cssID = $arrCss;
 		}
