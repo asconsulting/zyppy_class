@@ -24,6 +24,13 @@ class ZyppyArticle extends Contao_Frontend
 	{
 
 		$arrCss = StringUtil::deserialize($objArticle->cssID, true);
+		if (!is_array($arrCss)) {
+			$arrCss = array('', '');
+		}
+		if (!array_key_exists(1, $arrCss)) {
+			$arrCss[1] = '';
+		}
+		
 		$arrCss[1] .= ' ' .$objArticle->exclusiveClass;
 
 		$arrCommon = StringUtil::deserialize($objArticle->commonClasses, true);

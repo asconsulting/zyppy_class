@@ -30,6 +30,13 @@ class ZyppyContent extends Contao_Frontend
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
+		if (!is_array($arrCss)) {
+			$arrCss = array('', '');
+		}
+		if (!array_key_exists(1, $arrCss)) {
+			$arrCss[1] = '';
+		}
+		
 		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
 
 		$arrCommon = StringUtil::deserialize($objElement->commonClasses, true);
@@ -47,6 +54,13 @@ class ZyppyContent extends Contao_Frontend
 		$arrCss[1] = trim($arrCss[1]);
 
 		$arrRow = StringUtil::deserialize($objRow->cssID, true);
+		if (!is_array($arrRow)) {
+			$arrRow = array('', '');
+		}
+		if (!array_key_exists(1, $arrRow)) {
+			$arrRow[1] = '';
+		}
+		
 		$arrRow[1] .= ' ' .$objRow->exclusiveClass;
 
 		$arrCommon = StringUtil::deserialize($objRow->commonClasses, true);
