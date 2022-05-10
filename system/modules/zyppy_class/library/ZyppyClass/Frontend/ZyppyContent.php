@@ -24,7 +24,7 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
-		if (is_a($objElement, 'Isotope\Model\ProductCollection')) {
+		if (is_a($objElement, 'Isotope\Model\ProductCollection') || is_a($objElement, 'Isotope\Model\ProductCollection\Order') || is_a($objElement, 'Isotope\Model\ProductCollection\Cart')) {
 			return $strBuffer;
 		}
 
