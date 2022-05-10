@@ -17,9 +17,9 @@
 $GLOBALS['TL_HOOKS']['generatePage'][] 		= array('ZyppyClass\Frontend\ZyppyPage', 'generatePage');
 $GLOBALS['TL_HOOKS']['getArticle'][] 		= array('ZyppyClass\Frontend\ZyppyArticle', 'generateArticle');
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('ZyppyClass\Frontend\ZyppyContent', 'generateContent');
-$GLOBALS['TL_HOOKS']['getForm'][] 			= array('ZyppyClass\Frontend\ZyppyContent', 'generateContent');
-//$GLOBALS['TL_HOOKS']['getFrontendModule'][] = array('ZyppyClass\Frontend\ZyppyContent', 'generateContent');
-//$GLOBALS['TL_HOOKS']['compileFormFields'][] = array('ZyppyClass\Frontend\ZyppyForm', 'compileFormFields');
+//$GLOBALS['TL_HOOKS']['getForm'][] 			= array('ZyppyClass\Frontend\ZyppyContent', 'generateContent');
+$GLOBALS['TL_HOOKS']['getFrontendModule'][] = array('ZyppyClass\Frontend\ZyppyContent', 'generateContent');
+$GLOBALS['TL_HOOKS']['compileFormFields'][] = array('ZyppyClass\Frontend\ZyppyForm', 'compileFormFields');
 
 
 
