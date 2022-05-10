@@ -24,6 +24,9 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
+		if (is_a($objElement, 'Isotope\Model\ProductCollection')) {
+			return $strBuffer;
+		}
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objRow = ModuleModel::findByPk($objRow->module);
