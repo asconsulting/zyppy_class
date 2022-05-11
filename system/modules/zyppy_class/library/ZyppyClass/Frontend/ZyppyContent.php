@@ -24,14 +24,11 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
-		echo get_class($objElement) ."<hr>"; 
-		
-		if (is_a($objElement, 'Isotope\Model\ProductCollection') || is_a($objElement, 'Isotope\Model\ProductCollection\Order') || is_a($objElement, 'Isotope\Model\ProductCollection\Cart') || is_a($objElement, 'Contao\ContentModule')) {
-			return $strBuffer;
-		}
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objRow = ModuleModel::findByPk($objRow->module);
+			var_dump($objRow);
+			die();
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
