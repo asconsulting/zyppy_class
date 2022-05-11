@@ -31,9 +31,11 @@ class ZyppyContent extends Contao_Frontend
 		
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
+			$objRow = ModuleModel::findByPk($objRow->module);
+	
 			var_dump($objRow);
 			die();
-			$objRow = ModuleModel::findByPk($objRow->module);
+			
 		}
 
 		$arrCss = StringUtil::deserialize($objElement->cssID, true);
