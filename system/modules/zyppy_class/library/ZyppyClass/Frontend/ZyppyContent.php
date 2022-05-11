@@ -24,7 +24,7 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
-		if ($objRow['type'] == 'iso_checkout') {
+		if ($objRow->type == 'iso_checkout') {
 			return $strBuffer;
 		}
 
