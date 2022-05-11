@@ -24,11 +24,15 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
-		if ($objRow->type == 'iso_checkout') {
-			return $strBuffer;
-		}
+//		if ($objRow->type == 'iso_checkout') {
+//			return $strBuffer;
+//		}
+		
+		
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
+			var_dump($objRow);
+			die();
 			$objRow = ModuleModel::findByPk($objRow->module);
 		}
 
