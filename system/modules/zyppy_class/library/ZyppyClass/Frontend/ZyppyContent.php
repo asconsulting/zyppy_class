@@ -25,7 +25,7 @@ class ZyppyContent extends Contao_Frontend
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
 		if (!$objRow) {
-			return $objElement->generate();
+			return $strBuffer;
 		}
 
 		if (is_a($objElement, 'Contao\ContentModule')) {
