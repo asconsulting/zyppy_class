@@ -24,10 +24,7 @@ class ZyppyContent extends Contao_Frontend
 
 	public function generateContent($objRow, $strBuffer, $objElement)
 	{
-		if (!$objRow) {
-			return $strBuffer;
-		}
-
+		
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objRow = ModuleModel::findByPk($objRow->module);
 			if ($objRow && $objRow->type == 'iso_checkout') {
@@ -58,30 +55,6 @@ class ZyppyContent extends Contao_Frontend
 		}
 		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
 		$arrCss[1] = trim($arrCss[1]);
-
-		$arrRow = StringUtil::deserialize($objRow->cssID, true);
-		if (!is_array($arrRow)) {
-			$arrRow = array('', '');
-		}
-		if (!array_key_exists(1, $arrRow)) {
-			$arrRow[1] = '';
-		}
-		
-		$arrRow[1] .= ' ' .$objRow->exclusiveClass;
-
-		$arrCommon = StringUtil::deserialize($objRow->commonClasses, true);
-		if (!empty($arrCommon)) {
-			$arrRow[1] .= ' ' .implode(' ', $arrCommon);
-		}
-		$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
-		$arrRow[1] = trim($arrRow[1]);
-
-		$arrGlobal = StringUtil::deserialize($objRow->globalCommonClasses, true);
-		if (!empty($arrGlobal)) {
-			$arrRow[1] .= ' ' .implode(' ', $arrGlobal);
-		}
-		$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
-		$arrRow[1] = trim($arrRow[1]);	
 		
 		$arrTemp = explode(' ', $arrCss[1]);
 		$arrClass = array();
@@ -91,20 +64,47 @@ class ZyppyContent extends Contao_Frontend
 			}
 		}
 		
-		$arrTemp = explode(' ', $arrRow[1]);
-		foreach ($arrRow as $strClass) {
-			if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
-				$arrClass[] = trim($strClass);
+
+		if (!is_null($objRow)) {
+			$arrRow = StringUtil::deserialize($objRow->cssID, true);
+			if (!is_array($arrRow)) {
+				$arrRow = array('', '');
 			}
-		}
-		$arrCss[1] = implode(' ', $arrClass);
+			if (!array_key_exists(1, $arrRow)) {
+				$arrRow[1] = '';
+			}
+			
+			$arrRow[1] .= ' ' .$objRow->exclusiveClass;
+
+			$arrCommon = StringUtil::deserialize($objRow->commonClasses, true);
+			if (!empty($arrCommon)) {
+				$arrRow[1] .= ' ' .implode(' ', $arrCommon);
+			}
+			$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
+			$arrRow[1] = trim($arrRow[1]);
+
+			$arrGlobal = StringUtil::deserialize($objRow->globalCommonClasses, true);
+			if (!empty($arrGlobal)) {
+				$arrRow[1] .= ' ' .implode(' ', $arrGlobal);
+			}
+			$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
+			$arrRow[1] = trim($arrRow[1]);	
 		
-		if (is_a($objElement, 'Contao\ContentImage')) {
+			$arrTemp = explode(' ', $arrRow[1]);
+			foreach ($arrRow as $strClass) {
+				if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
+					$arrClass[] = trim($strClass);
+				}
+			}
+			$arrCss[1] = implode(' ', $arrClass);
+		}
+		
+		if (is_object($objRow) && is_a($objElement, 'Contao\ContentImage')) {
 			$strClass = ContentElement::findClass($objRow->type);
 			$objRow->typePrefix = 'ce_';
 			$objRow->cssID = $arrCss;
 			$objElement = new $strClass($objRow, null);
-		} else if (is_a($objElement, 'Contao\ContentDownload')) {
+		} else if (is_object($objRow) && is_a($objElement, 'Contao\ContentDownload')) {
 			$strClass = ContentElement::findClass($objRow->type);
 			$objRow->typePrefix = 'ce_';
 			$objRow->cssID = $arrCss;
