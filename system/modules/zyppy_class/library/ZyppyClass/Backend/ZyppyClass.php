@@ -14,8 +14,9 @@
 namespace ZyppyClass\Backend;
 
 use Contao\Backend as Contao_Backend;
-use Contao\StringUtil;
+use Contao\Config;
 use Contao\DataContainer;
+use Contao\StringUtil;
 
 
 class ZyppyClass extends Contao_Backend
@@ -58,12 +59,12 @@ class ZyppyClass extends Contao_Backend
 		}
 
 		$arrOptions = array();
-		if (!$GLOBALS['TL_CONFIG'][$strClassRequired]) {
+		if (!Config::get($strClassRequired)) {
 			$arrOptions[''] = '-';
 		}
 
-		if ($GLOBALS['TL_CONFIG'][$strClasses] != '') {
-			$arrTemp = StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strClasses], true);
+		if (Config::get($strClasses) != '') {
+			$arrTemp = StringUtil::deserialize(Config::get($strClasses), true);
 			foreach ($arrTemp as $arrOption) {
 				$arrOptions[$arrOption['key']] = $arrOption['value'];
 			}
@@ -101,8 +102,8 @@ class ZyppyClass extends Contao_Backend
 		}
 
 		$arrOptions = array();
-		if ($GLOBALS['TL_CONFIG'][$strCommonClasses] != '') {
-			$arrTemp = StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
+		if (Config::get($strCommonClasses) != '') {
+			$arrTemp = StringUtil::deserialize(Config::get($strCommonClasses), true);
 			foreach ($arrTemp as $arrOption) {
 				$arrOptions[$arrOption['key']] = $arrOption['value'];
 			}
@@ -113,8 +114,8 @@ class ZyppyClass extends Contao_Backend
 	public function getGlobalCommonClassOptions(DataContainer $dc) {
 		$arrOptions = array();
 
-		if ($GLOBALS['TL_CONFIG']['globalCommonClasses'] != '') {
-			$arrTemp = StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
+		if (Config::get('globalCommonClasses') != '') {
+			$arrTemp = StringUtil::deserialize(Config::get('globalCommonClasses'), true);
 			foreach ($arrTemp as $arrOption) {
 				$arrOptions[$arrOption['key']] = $arrOption['value'];
 			}
@@ -157,15 +158,15 @@ class ZyppyClass extends Contao_Backend
 			break;
 		}
 
-		if ($GLOBALS['TL_CONFIG'][$strClassRequired]) {
+		if (Config::get($strClassRequired)) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['exclusiveClass']['eval']['mandatory'] = true;
 		}
 
-		if ($GLOBALS['TL_CONFIG'][$strCommonRequired]) {
+		if (Config::get($strCommonRequired)) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['commonClasses']['eval']['mandatory'] = true;
 		}
 
-		if ($GLOBALS['TL_CONFIG']['globalCommonRequired']) {
+		if (Config::get('globalCommonRequired')) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['globalCommonClasses']['eval']['mandatory'] = true;
 		}
 	}
@@ -204,9 +205,9 @@ class ZyppyClass extends Contao_Backend
 			break;
 		}
 
-		$arrExclusiveClassOptions = StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strExclusiveClasses], true);
-		$arrCommonClassOptions = StringUtil::deserialize($GLOBALS['TL_CONFIG'][$strCommonClasses], true);
-		$arrGlobalCommonClassOptions = StringUtil::deserialize($GLOBALS['TL_CONFIG']['globalCommonClasses'], true);
+		$arrExclusiveClassOptions = StringUtil::deserialize(Config::get($strExclusiveClasses), true);
+		$arrCommonClassOptions = StringUtil::deserialize(Config::get($strCommonClasses), true);
+		$arrGlobalCommonClassOptions = StringUtil::deserialize(Config::get('globalCommonClasses'), true);
 
 		if (!$arrExclusiveClassOptions) {
 			$GLOBALS['TL_DCA'][$dc->table]['fields']['exclusiveClass']['inputType'] = false;
