@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * Zyppy Class
+ *
+ * Copyright (C) 2018-2024 Andrew Stevens Consulting
+ *
+ * @package    asconsulting/zyppy_class
+ * @link       https://andrewstevens.consulting
+ */
+ 
+ 
+namespace ZyppyClass\EventListener;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\Form;
+use Contao\Module;
+use Contao\ModuleModel;
+use Contao\StringUtil;
+
+#[AsHook('getFrontendModule')]
+class GetFrontendModuleListener
+{
+    public function __invoke(ModuleModel $objModel, string $strBuffer, object $objElement): string
+    {
+		if (is_a($objElement, 'Contao\ContentModule')) {
+			$objModel = ModuleModel::findByPk($objModel->module);
+			if ($objModel && $objModel->type == 'iso_checkout') {
+				return $strBuffer;
+			}			
+		}
+
+		$arrCss = StringUtil::deserialize($objElement->cssID, true);
+		if (!is_array($arrCss)) {
+			$arrCss = array('', '');
+		}
+		if (!array_key_exists(1, $arrCss)) {
+			$arrCss[1] = '';
+		}
+		
+		$arrCss[1] .= ' ' .$objElement->exclusiveClass;
+
+		$arrCommon = StringUtil::deserialize($objElement->commonClasses, true);
+		if (!empty($arrCommon)) {
+			$arrCss[1] .= ' ' .implode(' ', $arrCommon);
+		}
+		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+		$arrCss[1] = trim($arrCss[1]);
+
+		$arrGlobal = StringUtil::deserialize($objElement->globalCommonClasses, true);
+		if (!empty($arrGlobal)) {
+			$arrCss[1] .= ' ' .implode(' ', $arrGlobal);
+		}
+		$arrCss[1] = str_replace('  ', ' ', $arrCss[1]);
+		$arrCss[1] = trim($arrCss[1]);
+		
+		$arrTemp = explode(' ', $arrCss[1]);
+		$arrClass = array();
+		foreach ($arrTemp as $strClass) {
+			if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
+				$arrClass[] = trim($strClass);
+			}
+		}
+
+		if (!is_null($objModel)) {
+			$arrRow = StringUtil::deserialize($objModel->cssID, true);
+			if (!is_array($arrRow)) {
+				$arrRow = array('', '');
+			}
+			if (!array_key_exists(1, $arrRow)) {
+				$arrRow[1] = '';
+			}
+			
+			$arrRow[1] .= ' ' .$objModel->exclusiveClass;
+
+			$arrCommon = StringUtil::deserialize($objModel->commonClasses, true);
+			if (!empty($arrCommon)) {
+				$arrRow[1] .= ' ' .implode(' ', $arrCommon);
+			}
+			$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
+			$arrRow[1] = trim($arrRow[1]);
+
+			$arrGlobal = StringUtil::deserialize($objModel->globalCommonClasses, true);
+			if (!empty($arrGlobal)) {
+				$arrRow[1] .= ' ' .implode(' ', $arrGlobal);
+			}
+			$arrRow[1] = str_replace('  ', ' ', $arrRow[1]);
+			$arrRow[1] = trim($arrRow[1]);	
+		
+			$arrTemp = explode(' ', $arrRow[1]);
+			foreach ($arrRow as $strClass) {
+				if (!in_array($strClass, $arrClass) && trim($strClass) != '') {
+					$arrClass[] = trim($strClass);
+				}
+			}
+			$arrCss[1] = implode(' ', $arrClass);
+		}
+		
+		if (is_object($objModel) && is_a($objElement, 'Contao\ContentImage')) {
+			$strClass = ContentElement::findClass($objModel->type);
+			$objModel->typePrefix = 'ce_';
+			$objModel->cssID = $arrCss;
+			$objElement = new $strClass($objModel, null);
+		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) {
+			$strClass = ContentElement::findClass($objModel->type);
+			$objModel->typePrefix = 'ce_';
+			$objModel->cssID = $arrCss;
+			$objElement = new $strClass($objModel, null);
+		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
+			$strClass = ContentElement::findClass($objModel->type);
+			$objModel->typePrefix = 'ce_';
+			$objModel->cssID = $arrCss;
+			$objElement = new $strClass($objModel, null);
+		} else {
+			$objElement->cssID = $arrCss;
+		}
+		return $objElement->generate();
+	}
+	
+}
