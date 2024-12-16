@@ -12,7 +12,6 @@
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-
 /**
  * Global Fields
  */

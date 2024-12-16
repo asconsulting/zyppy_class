@@ -10,6 +10,8 @@
  */
 
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['exclusiveClass'] = [
     'inputType' => 'select',
     'eval' => ['tl_class' => 'w50'],
