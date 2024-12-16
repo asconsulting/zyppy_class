@@ -10,7 +10,7 @@
  */
 
 
-namespace ZyppyClass\ZyppyClassBundle;
+namespace ZyppyClass;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
