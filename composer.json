@@ -24,5 +24,12 @@
             "ZyppyClass\\": "src"
         }
     },
+    "extra": {
+        "contao": {
+            "sources": {
+                "contao": "system/modules/zyppy_class"
+            }
+        }
+    },
     "minimum-stability": "dev"
 }
