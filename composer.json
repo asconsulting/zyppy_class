@@ -24,12 +24,8 @@
             "ZyppyClass\\": "src/"
         }
     },
-    "extra": {
-        "contao": {
-            "sources": {
-                "contao": "system/modules/zyppy_class"
-            }
-        }
-    },
+	"extra": {
+		"contao-manager-plugin": "ZyppyClass\\ContaoManager\\Plugin"
+	},
     "minimum-stability": "dev"
 }
