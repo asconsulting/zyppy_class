@@ -13,8 +13,7 @@
     ],
     "require":{
         "php": ">=8.1",
-        "contao/core-bundle": "^5.3",
-        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
+        "contao/core-bundle": "^5.3"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"
