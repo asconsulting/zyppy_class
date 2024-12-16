@@ -12,6 +12,7 @@
 
 namespace ZyppyClass\ContaoManager;
 
+use ZyppyClass\ZyppyClassBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
