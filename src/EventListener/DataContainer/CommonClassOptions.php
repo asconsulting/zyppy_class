@@ -70,6 +70,8 @@ class CommonClassOptions
 			foreach ($arrTemp as $arrOption) {
 				$arrOptions[$arrOption['key']] = $arrOption['value'];
 			}
+		} else {
+			$arrOptions[''] = 'No Classes Configured';
 		}
 		return $arrOptions;
     }
