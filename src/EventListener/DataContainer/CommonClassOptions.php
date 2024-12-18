@@ -22,12 +22,6 @@ use Doctrine\DBAL\Connection;
 /**
  * Get news modules and return them as array.
  */
-#[AsCallback('tl_article', 'fields.commonClasses.options')]
-#[AsCallback('tl_content', 'fields.commonClasses.options')]
-#[AsCallback('tl_form', 'fields.commonClasses.options')]
-#[AsCallback('tl_form_field', 'fields.commonClasses.options')]
-#[AsCallback('tl_module', 'fields.commonClasses.options')]
-#[AsCallback('tl_page', 'fields.commonClasses.options')]
 class CommonClassOptions
 {
     public function __construct(private readonly Connection $db)
