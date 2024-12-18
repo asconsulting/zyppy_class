@@ -64,16 +64,21 @@ class CommonClassOptions
 			break;
 		}
 
-		$arrOptions = array();
+		$this->options = [];
 		if (Config::get($strCommonClasses) != '') {
 			$arrTemp = StringUtil::deserialize(Config::get($strCommonClasses), true);
 			foreach ($arrTemp as $arrOption) {
-				$arrOptions[$arrOption['key']] = $arrOption['value'];
+				$this->options[$arrOption['key']] = $arrOption['value'];
 			}
 		} else {
-			$arrOptions[] = 'No Classes Configured';
+			$this->options[] = 'No Classes Configured';
 		}
-		return $arrOptions;
+		return $this->options;
+    }
+
+    public function reset(): void
+    {
+        $this->options = null;
     }
 	
 }
