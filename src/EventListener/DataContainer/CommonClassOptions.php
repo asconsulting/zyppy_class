@@ -34,7 +34,14 @@ class CommonClassOptions
     {
 
     }
-    public function __invoke(DataContainer $dc): array
+	
+	#[AsCallback('tl_article', 'fields.commonClasses.options')]
+	#[AsCallback('tl_content', 'fields.commonClasses.options')]
+	#[AsCallback('tl_form', 'fields.commonClasses.options')]
+	#[AsCallback('tl_form_field', 'fields.commonClasses.options')]
+	#[AsCallback('tl_module', 'fields.commonClasses.options')]
+	#[AsCallback('tl_page', 'fields.commonClasses.options')]
+    public function getCommonClassOptions(DataContainer $dc): array
     {
 		$strCommonClasses = false;
 
