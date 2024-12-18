@@ -10,7 +10,7 @@
  */
  
  
-namespace ZyppyClass\EventListener\DataContainer;
+namespace ZyppyClass\EventListener\Backend\DataContainer;
 
 use Contao\Config;
 use Contao\ContentModel;
