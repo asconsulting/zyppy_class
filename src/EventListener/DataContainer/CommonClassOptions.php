@@ -19,9 +19,7 @@ use Contao\StringUtil;
 
 use Doctrine\DBAL\Connection;
 
-/**
- * Common Class Options
- */
+
 #[AsCallback(table: 'tl_article', target: 'fields.commonClasses.options')]
 #[AsCallback(table: 'tl_content', target: 'fields.commonClasses.options')]
 #[AsCallback(table: 'tl_form', target: 'fields.commonClasses.options')]
