@@ -169,6 +169,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['pageCommonRequired'] = [
     'eval' => ['tl_class' => 'w50 m12'],
 ];
 
+/*
 PaletteManipulator::create()
     ->addLegend('zyppy_global_class_legend', null, PaletteManipulator::POSITION_AFTER, true)
     ->addField('globalCommonClasses', 'zyppy_global_class_legend', PaletteManipulator::POSITION_APPEND)
@@ -210,3 +211,4 @@ PaletteManipulator::create()
 
 	->applyToPalette('default', 'tl_settings')
 ;
+*/
