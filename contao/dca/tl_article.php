@@ -29,7 +29,7 @@ $GLOBALS['TL_DCA']['tl_article']['fields']['globalCommonClasses'] = [
     'eval' => ['multiple' => true, 'tl_class' => 'w50 wizard50'],
     'sql' => ['type' => 'blob', 'notnull' => false],
 ];
-/*
+
 $objPalette = PaletteManipulator::create()
     ->addLegend('class_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE, true)
     ->addField('commonClasses', 'class_legend', PaletteManipulator::POSITION_APPEND)
@@ -40,4 +40,3 @@ $objPalette = PaletteManipulator::create()
 foreach ($GLOBALS['TL_DCA']['tl_article']['palettes'] as $key => $value) {
 	$objPalette->applyToPalette($key, 'tl_article');
 }
-*/
