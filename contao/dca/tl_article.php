@@ -38,5 +38,7 @@ $objPalette = PaletteManipulator::create()
 ;
 	
 foreach ($GLOBALS['TL_DCA']['tl_article']['palettes'] as $key => $value) {
-	//$objPalette->applyToPalette($key, 'tl_article');
+	if (!is_array($value)) {
+		$objPalette->applyToPalette($key, 'tl_article');
+	}
 }
