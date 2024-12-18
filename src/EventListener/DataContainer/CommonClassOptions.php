@@ -73,6 +73,7 @@ class CommonClassOptions
 		} else {
 			$this->options[] = 'No Classes Configured';
 		}
+		die('Load Options Listener');
 		return $this->options;
     }
 
