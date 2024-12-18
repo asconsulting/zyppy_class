@@ -20,14 +20,14 @@ use Contao\StringUtil;
 use Doctrine\DBAL\Connection;
 
 /**
- * Get news modules and return them as array.
+ * Common Class Options
  */
-#[AsCallback('tl_article', 'fields.commonClasses.options')]
-#[AsCallback('tl_content', 'fields.commonClasses.options')]
-#[AsCallback('tl_form', 'fields.commonClasses.options')]
-#[AsCallback('tl_form_field', 'fields.commonClasses.options')]
-#[AsCallback('tl_module', 'fields.commonClasses.options')]
-#[AsCallback('tl_page', 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_article', target: 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_content', target: 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_form', target: 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_form_field', target: 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_module', target: 'fields.commonClasses.options')]
+#[AsCallback(table: 'tl_page', target: 'fields.commonClasses.options')]
 class CommonClassOptions
 {
     public function __construct(private readonly Connection $db)
