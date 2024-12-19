@@ -15,6 +15,7 @@ namespace ZyppyClass\EventListener;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ContentElement;
 use Contao\ContentModel;
+use Contao\ModuleModel;
 use Contao\StringUtil;
 
 #[AsHook('getContentElement')]
