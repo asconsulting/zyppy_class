@@ -106,11 +106,12 @@ class GetContentElementListener
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
-		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText') && false) {
+		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
+			return "Content Text";
 		} else {
 			$objElement->cssID = $arrCss;
 		}
