@@ -111,7 +111,7 @@ class GetContentElementListener
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
-			return "Content Text";
+			//return "Content Text";
 		} else {
 			$objElement->cssID = $arrCss;
 		}
