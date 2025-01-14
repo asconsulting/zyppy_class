@@ -15,6 +15,7 @@ namespace ZyppyClass\EventListener;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\FormModel;
+use Contao\ModuleModel;
 use Contao\StringUtil;
 
 #[AsHook('getForm')]
