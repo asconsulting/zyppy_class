@@ -110,10 +110,10 @@ class GetContentElementListener
 		}
 		
 		if (is_object($objModel) && (
-			(is_a($objElement, 'Contao\ContentImage')) || 
-			(is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) || 
-			(is_object($objModel) && is_a($objElement, 'Contao\ContentText')) || 
-			(is_object($objModel) && is_a($objElement, 'Contao\ContentProxy'))
+			is_a($objElement, 'Contao\ContentImage') || 
+			is_a($objElement, 'Contao\ContentDownload') || 
+			is_a($objElement, 'Contao\ContentText') || 
+			is_a($objElement, 'Contao\ContentProxy')
 		)) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';

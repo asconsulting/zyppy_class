@@ -96,17 +96,12 @@ class GetFrontendModuleListener
 			$arrCss[1] = implode(' ', $arrClass);
 		}
 		
-		if (is_object($objModel) && is_a($objElement, 'Contao\ContentImage')) {
-			$strClass = ContentElement::findClass($objModel->type);
-			$objModel->typePrefix = 'ce_';
-			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
-		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) {
-			$strClass = ContentElement::findClass($objModel->type);
-			$objModel->typePrefix = 'ce_';
-			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
-		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
+		if (is_object($objModel) && (
+			is_a($objElement, 'Contao\ContentImage') || 
+			is_a($objElement, 'Contao\ContentDownload') || 
+			is_a($objElement, 'Contao\ContentText') || 
+			is_a($objElement, 'Contao\ContentProxy')
+		)) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
