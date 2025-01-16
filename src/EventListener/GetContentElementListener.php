@@ -109,32 +109,17 @@ class GetContentElementListener
 			$arrCss[1] = implode(' ', $arrClass);
 		}
 		
-		if (is_object($objModel) && is_a($objElement, 'Contao\ContentImage')) {
+		if (is_object($objModel) && (
+			(is_a($objElement, 'Contao\ContentImage')) || 
+			(is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) || 
+			(is_object($objModel) && is_a($objElement, 'Contao\ContentText')) || 
+			(is_object($objModel) && is_a($objElement, 'Contao\ContentProxy')) {
+		) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, $strColumn);
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentImage');
-		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) {
-			$strClass = ContentElement::findClass($objModel->type);
-			$objModel->typePrefix = 'ce_';
-			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, $strColumn);
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentDownload');
-		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
-			$strClass = ContentElement::findClass($objModel->type);
-			$objModel->typePrefix = 'ce_';
-			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, $strColumn);
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentText');
-		}  else if (is_object($objModel) && is_a($objElement, 'Contao\ContentProxy')) {
-			$strClass = ContentElement::findClass($objModel->type);
-			$objModel->typePrefix = 'ce_';
-			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, $strColumn);
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentProxy');
 		} else {
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ' .get_class($objElement));
 			$objElement->cssID = $arrCss;
 		}
 		return $objElement->generate();
