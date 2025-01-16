@@ -13,18 +13,22 @@
 namespace ZyppyClass\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\CoreBundle\Monolog\ContaoContext;
 use Contao\ContentElement;
 use Contao\ContentModel;
 use Contao\ModuleModel;
 use Contao\StringUtil;
 use Contao\System;
+use Psr\Log\LogLevel;
 
 #[AsHook('getContentElement')]
 class GetContentElementListener
 {
     public function __invoke(ContentModel $objModel, string $strBuffer, $objElement): string
     {
-		System::log('getContentElement Hook Fired', __METHOD__, TL_GENERAL);
+		System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Hook Fired');
+		
+		//System::log('getContentElement Hook Fired', __METHOD__, TL_GENERAL);
 		
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objModel = ModuleModel::findByPk($objModel->module);
