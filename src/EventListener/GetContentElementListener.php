@@ -121,7 +121,7 @@ class GetContentElementListener
 			$objElement = new $strClass($objModel, null);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentText');
 		} else {
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement default element');
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ' .get_class($objElement));
 			$objElement->cssID = $arrCss;
 		}
 		return $objElement->generate();
