@@ -12,6 +12,7 @@
  
 namespace ZyppyClass\EventListener;
 
+use Contao\ArticleModel;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\CoreBundle\Monolog\ContaoContext;
 use Contao\ContentElement;
@@ -27,6 +28,12 @@ class GetContentElementListener
     public function __invoke(ContentModel $objModel, string $strBuffer, $objElement): string
     {
 		System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Hook Fired');
+		
+		$strColumn = 'main';
+		$objArticle = ArticleModel::findByPk($objModel->pid);
+		if ($objArticle) {
+			$strColumn = $objArticle->inColumn;
+		}
 		
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objModel = ModuleModel::findByPk($objModel->module);
@@ -106,25 +113,25 @@ class GetContentElementListener
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
+			$objElement = new $strClass($objModel, $strColumn);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentImage');
 		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
+			$objElement = new $strClass($objModel, $strColumn);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentDownload');
 		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
+			$objElement = new $strClass($objModel, $strColumn);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentText');
 		}  else if (is_object($objModel) && is_a($objElement, 'Contao\ContentProxy')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
-			$objElement = new $strClass($objModel, null);
+			$objElement = new $strClass($objModel, $strColumn);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentProxy');
 		} else {
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ' .get_class($objElement));
