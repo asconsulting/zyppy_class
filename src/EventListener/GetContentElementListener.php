@@ -28,8 +28,6 @@ class GetContentElementListener
     {
 		System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Hook Fired');
 		
-		//System::log('getContentElement Hook Fired', __METHOD__, TL_GENERAL);
-		
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objModel = ModuleModel::findByPk($objModel->module);
 			if ($objModel && $objModel->type == 'iso_checkout') {
@@ -70,6 +68,7 @@ class GetContentElementListener
 		}
 
 		if (!is_null($objModel)) {
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Model Found');
 			$arrRow = StringUtil::deserialize($objModel->cssID, true);
 			if (!is_array($arrRow)) {
 				$arrRow = array('', '');
@@ -108,18 +107,21 @@ class GetContentElementListener
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentImage');
 		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentDownload')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentDownload');
 		} else if (is_object($objModel) && is_a($objElement, 'Contao\ContentText')) {
 			$strClass = ContentElement::findClass($objModel->type);
 			$objModel->typePrefix = 'ce_';
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
-			//return "Content Text";
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentText');
 		} else {
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement default element');
 			$objElement->cssID = $arrCss;
 		}
 		return $objElement->generate();
