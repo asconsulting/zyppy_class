@@ -17,12 +17,15 @@ use Contao\ContentElement;
 use Contao\ContentModel;
 use Contao\ModuleModel;
 use Contao\StringUtil;
+use Contao\System;
 
 #[AsHook('getContentElement')]
 class GetContentElementListener
 {
     public function __invoke(ContentModel $objModel, string $strBuffer, $objElement): string
     {
+		System::log('getContentElement Hook Fired', __METHOD__, TL_GENERAL);
+		
 		if (is_a($objElement, 'Contao\ContentModule')) {
 			$objModel = ModuleModel::findByPk($objModel->module);
 			if ($objModel && $objModel->type == 'iso_checkout') {
