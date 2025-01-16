@@ -120,6 +120,12 @@ class GetContentElementListener
 			$objModel->cssID = $arrCss;
 			$objElement = new $strClass($objModel, null);
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentText');
+		}  else if (is_object($objModel) && is_a($objElement, 'Contao\ContentProxy')) {
+			$strClass = ContentElement::findClass($objModel->type);
+			$objModel->typePrefix = 'ce_';
+			$objModel->cssID = $arrCss;
+			$objElement = new $strClass($objModel, null);
+			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ContentProxy');
 		} else {
 			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement ' .get_class($objElement));
 			$objElement->cssID = $arrCss;
