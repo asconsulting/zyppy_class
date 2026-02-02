@@ -27,8 +27,6 @@ class GetContentElementListener
 {
     public function __invoke(ContentModel $objModel, string $strBuffer, $objElement): string
     {
-		System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Hook Fired');
-		
 		$strColumn = 'main';
 		$objArticle = ArticleModel::findByPk($objModel->pid);
 		if ($objArticle) {
@@ -75,7 +73,6 @@ class GetContentElementListener
 		}
 
 		if (!is_null($objModel)) {
-			System::getContainer()->get('monolog.logger.contao.cron')->info('getContentElement Model Found');
 			$arrRow = StringUtil::deserialize($objModel->cssID, true);
 			if (!is_array($arrRow)) {
 				$arrRow = array('', '');
